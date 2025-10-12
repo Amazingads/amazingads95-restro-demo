@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Trail Fine Dining - Authentic Indian Culinary Journey</title>
+    <meta name="description" content="Immerse yourself in authentic Indian flavors at Spice Trail Fine Dining. Traditional recipes, royal ambiance, and unforgettable dining experience.">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'royal': ['Cinzel', 'serif'],
+                        'elegant': ['Cormorant Garamond', 'serif'],
+                        'script': ['Dancing Script', 'cursive'],
+                    },
+                    colors: {
+                        'royal': {
+                            50: '#fef7ed',
+                            100: '#fdebd7',
+                            200: '#fbd2ae',
+                            300: '#f7b27a',
+                            400: '#f28544',
+                            500: '#ee5d1e',
+                            600: '#dc4214',
+                            700: '#b73113',
+                            800: '#922818',
+                            900: '#762216',
+                        },
+                        'gold': {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        },
+                        'spice': {
+                            50: '#fdf4f0',
+                            100: '#fae7dd',
+                            200: '#f4ccbb',
+                            300: '#eba588',
+                            400: '#e17654',
+                            500: '#d6532f',
+                            600: '#c73e25',
+                            700: '#a53021',
+                            800: '#862822',
+                            900: '#6f231f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Authentic Indian Restaurant Theme */
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #1a0c08 0%, #2d1810 50%, #1a0c08 100%);
+            color: #f4e4c1;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Traditional Indian Pattern Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(220, 66, 37, 0.05) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d97706' fill-opacity='0.02'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Elegant Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, #2d1810 0%, #1a0c08 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 1s ease;
+        }
+
+        .loading-mandala {
+            width: 120px;
+            height: 120px;
+            border: 3px solid transparent;
+            border-top: 3px solid #d97706;
+            border-right: 3px solid #f59e0b;
+            border-radius: 50%;
+            animation: mandala-spin 2s linear infinite;
+            position: relative;
+        }
+
+        .loading-mandala::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid transparent;
+            border-left: 2px solid #fbbf24;
+            border-bottom: 2px solid #f59e0b;
+            border-radius: 50%;
+            animation: mandala-spin 1.5s linear infinite reverse;
+        }
+
+        @keyframes mandala-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Royal Header */
+        .royal-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: linear-gradient(90deg, rgba(26, 12, 8, 0.95) 0%, rgba(45, 24, 16, 0.95) 50%, rgba(26, 12, 8, 0.95) 100%);
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid rgba(217, 119, 6, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .royal-header.scrolled {
+            background: linear-gradient(90deg, rgba(26, 12, 8, 0.98) 0%, rgba(45, 24, 16, 0.98) 50%, rgba(26, 12, 8, 0.98) 100%);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border-bottom: 2px solid rgba(217, 119, 6, 0.5);
+        }
+
+        /* Traditional Logo */
+        .restaurant-logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-mandala {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #d97706 0%, #b45309 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 0 20px rgba(217, 119, 6, 0.4);
+            animation: gentle-glow 3s ease-in-out infinite alternate;
+        }
+
+        .logo-mandala::before {
+            content: '👑';
+    font-size: 24px;
+    color: #fbbf24;
+    animation: gentle-rotate 6s linear infinite;
+        }
+
+        @keyframes gentle-glow {
+            0% { box-shadow: 0 0 20px rgba(217, 119, 6, 0.4); }
+            100% { box-shadow: 0 0 30px rgba(217, 119, 6, 0.6); }
+        }
+
+        @keyframes gentle-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .restaurant-name {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #fbbf24;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .restaurant-tagline {
+            font-family: 'Dancing Script', cursive;
+            font-size: 16px;
+            color: #f4e4c1;
+            font-style: italic;
+            margin-top: -5px;
+        }
+
+        /* Traditional Navigation */
+        .nav-traditional {
+            position: relative;
+        }
+
+        .nav-traditional a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: #f4e4c1;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-traditional a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(217, 119, 6, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-traditional a:hover::before {
+            left: 100%;
+        }
+
+        .nav-traditional a:hover {
+            color: #fbbf24;
+            background: rgba(217, 119, 6, 0.1);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Royal Buttons */
+        .btn-royal {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            color: #fbbf24;
+            padding: 14px 28px;
+            border: 2px solid #fbbf24;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-royal::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, #fbbf24 0%, #f59e0b 100%);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .btn-royal:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-royal:hover {
+            color: #1a0c08;
+            border-color: #fbbf24;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.5);
+        }
+
+        .btn-royal-outline {
+            background: transparent;
+            color: #fbbf24;
+            border: 2px solid #d97706;
+        }
+
+        .btn-royal-outline:hover {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            color: #fbbf24;
+        }
+
+        /* Majestic Hero Section */
+        .hero-royal {
+            min-height: 100vh;
+            background: 
+                linear-gradient(135deg, rgba(26, 12, 8, 0.8) 0%, rgba(45, 24, 16, 0.6) 50%, rgba(26, 12, 8, 0.8) 100%),
+                url('https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .hero-royal {
+                background-attachment: scroll;
+            }
+        }
+
+        .hero-royal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at top, rgba(217, 119, 6, 0.1) 0%, transparent 70%),
+                radial-gradient(ellipse at bottom, rgba(180, 83, 9, 0.1) 0%, transparent 70%);
+        }
+
+        /* Floating Decorative Elements */
+        .royal-ornament {
+            position: absolute;
+            font-size: 24px;
+            color: rgba(217, 119, 6, 0.3);
+            animation: float-ornament 8s ease-in-out infinite;
+        }
+
+        .royal-ornament:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .royal-ornament:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .royal-ornament:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float-ornament {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+            25% { transform: translateY(-20px) rotate(90deg); opacity: 0.6; }
+            50% { transform: translateY(-10px) rotate(180deg); opacity: 0.4; }
+            75% { transform: translateY(-30px) rotate(270deg); opacity: 0.7; }
+        }
+
+        /* Traditional Menu Cards */
+        .menu-card-traditional {
+            background: linear-gradient(145deg, rgba(45, 24, 16, 0.9) 0%, rgba(26, 12, 8, 0.9) 100%);
+            border: 2px solid rgba(217, 119, 6, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .menu-card-traditional::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(217, 119, 6, 0.05) 0%, transparent 70%);
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+
+        .menu-card-traditional:hover::before {
+            transform: rotate(180deg);
+        }
+
+        .menu-card-traditional:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(217, 119, 6, 0.4);
+            box-shadow: 
+                0 20px 40px rgba(217, 119, 6, 0.2),
+                inset 0 1px 0 rgba(251, 191, 36, 0.2);
+        }
+
+        /* Spice Icons */
+        .spice-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 10px;
+            border: 2px solid;
+            position: relative;
+        }
+
+        .veg-traditional {
+           background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    border-color: #fbbf24;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+    border-radius: 4px;
+    width: 22px;
+    height: 22px;
+        }
+
+        .non-veg-traditional {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    border-color: #fbbf24;
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.4);
+    /* Add square shape for FSSAI */
+    border-radius: 4px;
+    width: 22px;
+    height: 22px;
+        }
+
+        /* Traditional Tab System */
+        .tab-traditional {
+            font-family: 'Cinzel', serif;
+            background: transparent;
+            color: #f4e4c1;
+            border: 2px solid rgba(217, 119, 6, 0.3);
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-traditional::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #d97706, #b45309);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .tab-traditional:hover::before,
+        .tab-traditional.active::before {
+            left: 0;
+        }
+
+        .tab-traditional:hover,
+        .tab-traditional.active {
+            color: #fbbf24;
+            border-color: #fbbf24;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(217, 119, 6, 0.3);
+        }
+
+        /* Elegant Forms */
+        .form-elegant {
+            background: linear-gradient(145deg, rgba(45, 24, 16, 0.8) 0%, rgba(26, 12, 8, 0.8) 100%);
+            border: 2px solid rgba(217, 119, 6, 0.2);
+            color: #f4e4c1;
+            padding: 16px 20px;
+            border-radius: 15px;
+            width: 100%;
+            transition: all 0.3s ease;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            backdrop-filter: blur(5px);
+        }
+
+        .form-elegant:focus {
+            outline: none;
+            border-color: #d97706;
+            box-shadow: 
+                0 0 0 4px rgba(217, 119, 6, 0.1),
+                inset 0 2px 4px rgba(251, 191, 36, 0.1);
+            transform: scale(1.02);
+        }
+
+        .form-elegant::placeholder {
+            color: rgba(244, 228, 193, 0.6);
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .form-elegant:focus {
+                transform: none;
+            }
+        }
+
+        .form-label-elegant {
+            color: #fbbf24;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Traditional Gallery */
+        .gallery-traditional {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item-traditional {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            aspect-ratio: 1;
+            cursor: pointer;
+            border: 3px solid transparent;
+            background: linear-gradient(145deg, #d97706, #b45309) padding-box, 
+                        linear-gradient(145deg, #fbbf24, #d97706) border-box;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item-traditional:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 15px 30px rgba(217, 119, 6, 0.4);
+        }
+
+        .gallery-item-traditional img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item-traditional:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay-traditional {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 12, 8, 0.8) 0%, rgba(217, 119, 6, 0.6) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+
+        .gallery-item-traditional:hover .gallery-overlay-traditional {
+            opacity: 1;
+        }
+
+        /* Mobile Menu Traditional */
+        .mobile-menu-traditional {
+            background: linear-gradient(145deg, rgba(26, 12, 8, 0.98) 0%, rgba(45, 24, 16, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            border-radius: 0 0 25px 25px;
+            border: 2px solid rgba(217, 119, 6, 0.3);
+            border-top: none;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        .mobile-menu-traditional.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* WhatsApp Integration */
+        .whatsapp-traditional {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            border: 3px solid #fbbf24;
+            animation: whatsapp-glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes whatsapp-glow {
+            0% { box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); }
+            100% { box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7); }
+        }
+
+        .whatsapp-traditional:hover {
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-traditional {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+
+        /* Elegant Watermark */
+        .watermark-elegant {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.1), rgba(180, 83, 9, 0.1));
+            color: #d97706;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 14px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            z-index: 998;
+            transition: all 0.3s ease;
+        }
+
+        .watermark-elegant:hover {
+            background: linear-gradient(135deg, rgba(217, 119, 6, 0.2), rgba(180, 83, 9, 0.2));
+            transform: scale(1.05);
+            color: #fbbf24;
+        }
+
+        @media (max-width: 768px) {
+            .watermark-elegant {
+                bottom: 15px;
+                left: 15px;
+                font-size: 12px;
+                padding: 8px 14px;
+            }
+        }
+
+        /* Reveal Animations */
+        .reveal-traditional {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal-traditional.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Indian Patterns */
+        .pattern-border {
+            border-image: linear-gradient(45deg, #d97706, #fbbf24, #d97706) 1;
+            border-style: solid;
+            border-width: 2px;
+        }
+
+        /* Typography Enhancements */
+        .title-royal {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            color: #fbbf24;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .text-elegant {
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.8;
+            color: #f4e4c1;
+        }
+
+        .text-script {
+            font-family: 'Dancing Script', cursive;
+            color: #fbbf24;
+        }
+
+        /* Price Styling */
+        .price-royal {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 24px;
+            color: #fbbf24;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Hidden class */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+    
+    <!-- Crafted with authentic Indian heritage by amazingads95 -->
+</head>
+<body>
+    <!-- Elegant Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="text-center">
+            <div class="loading-mandala mb-6"></div>
+            <div class="text-gold-400 text-2xl font-royal font-bold">Spice Trail</div>
+            <div class="text-script text-gold-300 text-lg mt-2">Fine Dining Experience</div>
+            <div class="text-elegant text-gold-500 text-sm mt-4">Preparing your royal feast...</div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Traditional Button -->
+    <div class="whatsapp-traditional" onclick="openWhatsAppTraditional()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- Royal Header -->
+    <header class="royal-header" id="header">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="restaurant-logo">
+                    <div class="logo-mandala"></div>
+                    <div>
+                        <div class="restaurant-name">Spice Trail</div>
+                        <div class="restaurant-tagline">Fine Dining</div>
+                    </div>
+                </div>
+                
+                <div class="nav-traditional hidden md:flex space-x-2">
+                    <a href="#home">🏛️ Home</a>
+                    <a href="#menu">📜 Menu</a>
+                    <a href="#about">👑 About</a>
+                    <a href="#reservations">🍽️ Reservations</a>
+                </div>
+                
+                <a href="#reservations" class="btn-royal hidden md:inline-flex">
+                    <i class="fas fa-crown mr-2"></i>
+                    Royal Booking
+                </a>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-gold-400 text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Traditional Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu-traditional md:hidden">
+                <div class="p-6 space-y-4">
+                    <a href="#home" class="block py-4 px-6 text-gold-300 hover:text-gold-400 hover:bg-royal-800 rounded-lg transition duration-300 text-lg font-elegant">🏛️ Home</a>
+                    <a href="#menu" class="block py-4 px-6 text-gold-300 hover:text-gold-400 hover:bg-royal-800 rounded-lg transition duration-300 text-lg font-elegant">📜 Menu</a>
+                    <a href="#about" class="block py-4 px-6 text-gold-300 hover:text-gold-400 hover:bg-royal-800 rounded-lg transition duration-300 text-lg font-elegant">👑 About</a>
+                    <a href="#reservations" class="block py-4 px-6 text-gold-300 hover:text-gold-400 hover:bg-royal-800 rounded-lg transition duration-300 text-lg font-elegant">🍽️ Reservations</a>
+                    <a href="#reservations" class="btn-royal w-full mt-4">
+                        <i class="fas fa-crown mr-2"></i>
+                        Royal Booking
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Majestic Hero Section -->
+    <section id="home" class="hero-royal">
+        <!-- Floating Royal Ornaments -->
+        <div class="royal-ornament">🪷</div>
+       <div class="royal-ornament">🏰</div>
+        <div class="royal-ornament">🏵️</div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <div class="reveal-traditional">
+                <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-8 py-3 mb-8 border border-gold-400/30">
+                    <i class="fas fa-star text-gold-400 mr-3"></i>
+                    <span class="text-script text-gold-300 text-lg">Awarded Best Indian Restaurant 2024</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl lg:text-8xl title-royal mb-8 leading-tight">
+                    Exquisite
+                    <span class="text-script text-6xl md:text-8xl lg:text-9xl block text-gold-400">
+                        Indian Cuisine
+                    </span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl lg:text-3xl text-elegant mb-12 max-w-4xl mx-auto opacity-90 leading-relaxed">
+                    Embark on a culinary journey through the royal kitchens of India. 
+                    Where every dish tells a story of tradition, every spice sings of heritage, 
+                    and every meal becomes a cherished memory.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="#menu" class="btn-royal text-xl px-12 py-5">
+                        <i class="fas fa-scroll mr-3"></i>
+                        Discover Our Menu
+                    </a>
+                    <a href="#reservations" class="btn-royal btn-royal-outline text-xl px-12 py-5">
+                        <i class="fas fa-calendar-alt mr-3"></i>
+                        Reserve Your Table
+                    </a>
+                </div>
+                
+                <!-- Traditional Stats -->
+                <div class="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl title-royal text-gold-400 mb-2">25+</div>
+                        <div class="text-elegant text-gold-300">Years of Excellence</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl title-royal text-gold-400 mb-2">100K+</div>
+                        <div class="text-elegant text-gold-300">Happy Diners</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl title-royal text-gold-400 mb-2">50+</div>
+                        <div class="text-elegant text-gold-300">Traditional Recipes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gold-400 animate-bounce cursor-pointer" onclick="document.querySelector('#menu').scrollIntoView({behavior: 'smooth'})">
+            <div class="flex flex-col items-center">
+                <span class="text-script text-lg mb-2">Explore Further</span>
+                <i class="fas fa-angle-double-down text-2xl"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traditional Menu Section -->
+    <section id="menu" class="py-24 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20 reveal-traditional">
+                <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-8 py-3 mb-8 border border-gold-400/30">
+                    <i class="fas fa-utensils text-gold-400 mr-3"></i>
+                    <span class="text-script text-gold-300 text-lg">Royal Kitchen Specialties</span>
+                </div>
+                <h2 class="text-5xl md:text-6xl title-royal mb-8">Our Culinary Heritage</h2>
+                <p class="text-xl text-elegant max-w-4xl mx-auto">
+                    Each dish is a masterpiece crafted from recipes passed down through generations, 
+                    using the finest spices sourced directly from their origin lands across India.
+                </p>
+            </div>
+
+            <!-- Traditional Menu Categories -->
+            <div class="flex flex-wrap justify-center gap-6 mb-16 reveal-traditional">
+                <button class="tab-traditional active" onclick="showCategoryTraditional('appetizers')" id="appetizers-tab">
+                    <i class="fas fa-leaf mr-2"></i>Royal Appetizers
+                </button>
+                <button class="tab-traditional" onclick="showCategoryTraditional('mains')" id="mains-tab">
+                    <i class="fas fa-fire mr-2"></i>Majestic Mains
+                </button>
+                <button class="tab-traditional" onclick="showCategoryTraditional('desserts')" id="desserts-tab">
+                    <i class="fas fa-gem mr-2"></i>Sweet Endings
+                </button>
+            </div>
+
+            <!-- Royal Appetizers -->
+            <div id="appetizers-menu" class="menu-category">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-traditional">
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Paneer Tikka Maharaja</h3>
+                            </div>
+                            <span class="price-royal">₹525</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Royal cottage cheese marinated in saffron-infused yogurt with rare spices, 
+                            grilled in our traditional tandoor and served with mint chutney
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">18-22 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-pepper-hot mr-2"></i>
+                                <span class="text-elegant">Mild</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon non-veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Seekh Kebab Nawabi</h3>
+                            </div>
+                            <span class="price-royal">₹675</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Hand-minced lamb kebabs seasoned with royal spices, charcoal-grilled 
+                            and served with saffron rice and pomegranate chutney
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">25-30 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-pepper-hot mr-2"></i>
+                                <span class="text-elegant">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Samosa Chaat Royal</h3>
+                            </div>
+                            <span class="price-royal">₹385</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Crispy pyramid pastries filled with spiced potatoes, topped with 
+                            yogurt, tamarind chutney, and sev, garnished with fresh herbs
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">12-15 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-pepper-hot mr-2"></i>
+                                <span class="text-elegant">Mild</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon non-veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Tandoori Jhinga</h3>
+                            </div>
+                            <span class="price-royal">₹850</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Jumbo prawns marinated in yogurt and exotic spices, grilled in tandoor 
+                            and served with curry leaves and lemon butter sauce
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">20-25 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-pepper-hot mr-2"></i>
+                                <span class="text-elegant">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Dahi Puri Palace</h3>
+                            </div>
+                            <span class="price-royal">₹325</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Crispy puris filled with spiced water, tamarind chutney, and yogurt, 
+                            a burst of flavors in every bite from Mumbai's streets
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">8-12 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-pepper-hot mr-2"></i>
+                                <span class="text-elegant">Tangy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon non-veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Chicken Malai Tikka</h3>
+                            </div>
+                            <span class="price-royal">₹625</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Succulent chicken pieces marinated in cream cheese and mild spices, 
+                            grilled to perfection and served with fresh salad
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">22-28 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-pepper-hot mr-2"></i>
+                                <span class="text-elegant">Mild</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Majestic Mains -->
+            <div id="mains-menu" class="menu-category hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-traditional">
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon non-veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Butter Chicken Royale</h3>
+                            </div>
+                            <span class="price-royal">₹950</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Tender chicken cooked in rich tomato-cashew gravy with cream and butter, 
+                            served with basmati rice and butter naan
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">35-40 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-pepper-hot mr-2"></i>
+                                <span class="text-elegant">Mild</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon non-veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Rogan Josh Kashmir</h3>
+                            </div>
+                            <span class="price-royal">₹1250</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Authentic Kashmiri lamb curry cooked with aromatic spices and yogurt, 
+                            slow-cooked to perfection in traditional style
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">45-50 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-pepper-hot mr-2"></i>
+                                <span class="text-elegant">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Dal Makhani Imperial</h3>
+                            </div>
+                            <span class="price-royal">₹525</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Black lentils slow-cooked overnight with butter, cream, and aromatic spices, 
+                            a royal favorite from Punjab's kitchens
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">30-35 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-pepper-hot mr-2"></i>
+                                <span class="text-elegant">Mild</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon non-veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Biryani Hyderabadi</h3>
+                            </div>
+                            <span class="price-royal">₹1150</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Aromatic basmati rice layered with spiced mutton, slow-cooked in sealed pot, 
+                            served with raita and shorba
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">50-60 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-pepper-hot mr-2"></i>
+                                <span class="text-elegant">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Paneer Makhani</h3>
+                            </div>
+                            <span class="price-royal">₹750</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Cottage cheese cubes in rich tomato-cashew gravy with cream and fenugreek, 
+                            served with choice of Indian bread
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">28-32 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-pepper-hot mr-2"></i>
+                                <span class="text-elegant">Mild</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon non-veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Fish Curry Goan</h3>
+                            </div>
+                            <span class="price-royal">₹1050</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Fresh kingfish cooked in coconut milk with Goan spices and curry leaves, 
+                            served with steamed rice
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">32-38 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-pepper-hot mr-2"></i>
+                                <span class="text-elegant">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sweet Endings -->
+            <div id="desserts-menu" class="menu-category hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-traditional">
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Gulab Jamun Royale</h3>
+                            </div>
+                            <span class="price-royal">₹350</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Soft milk dumplings soaked in cardamom-rose syrup, served warm 
+                            with silver leaf and crushed pistachios
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">8-12 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-gem mr-2"></i>
+                                <span class="text-elegant">Sweet</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Ras Malai Bengali</h3>
+                            </div>
+                            <span class="price-royal">₹425</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Spongy cottage cheese dumplings in thickened sweetened milk, 
+                            flavored with cardamom and garnished with almonds
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">10-15 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-gem mr-2"></i>
+                                <span class="text-elegant">Sweet</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Kulfi Pista Malai</h3>
+                            </div>
+                            <span class="price-royal">₹375</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Traditional Indian ice cream made with reduced milk, pistachios, 
+                            and cardamom, served with falooda and rose syrup
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">5-8 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-gem mr-2"></i>
+                                <span class="text-elegant">Sweet</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Gajar Halwa</h3>
+                            </div>
+                            <span class="price-royal">₹475</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Rich carrot pudding slow-cooked with milk, ghee, and cardamom, 
+                            garnished with cashews and served with vanilla ice cream
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">12-18 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-gem mr-2"></i>
+                                <span class="text-elegant">Sweet</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Jalebi Rabri</h3>
+                            </div>
+                            <span class="price-royal">₹325</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Crispy spiral sweets soaked in saffron syrup, served with 
+                            thick sweetened milk reduction and chopped dry fruits
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">10-14 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-gem mr-2"></i>
+                                <span class="text-elegant">Sweet</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card-traditional">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="flex items-center">
+                                <span class="spice-icon veg-traditional">●</span>
+                                <h3 class="text-2xl title-royal text-gold-300">Shahi Tukda</h3>
+                            </div>
+                            <span class="price-royal">₹450</span>
+                        </div>
+                        <p class="text-elegant mb-6 leading-relaxed">
+                            Royal bread pudding with fried bread slices soaked in sweetened milk, 
+                            topped with nuts and edible silver foil
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-clock mr-2"></i>
+                                <span class="text-elegant">15-20 mins</span>
+                            </div>
+                            <div class="flex items-center text-gold-400 text-sm">
+                                <i class="fas fa-gem mr-2"></i>
+                                <span class="text-elegant">Sweet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Royal About Section -->
+    <section id="about" class="py-24 relative">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 reveal-traditional">
+                    <div class="relative">
+                        <img 
+                            src="https://images.pexels.com/photos/3738412/pexels-photo-3738412.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+                            alt="Master Chef at Spice Trail" 
+                            class="rounded-3xl shadow-2xl w-full pattern-border"
+                            onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'"
+                        />
+                        
+                        <!-- Royal Achievement Badge -->
+                        <div class="absolute -top-8 -right-8 bg-gradient-to-r from-gold-500 to-gold-600 text-royal-900 p-8 rounded-3xl shadow-2xl border-4 border-gold-400">
+                            <div class="text-center">
+                                <i class="fas fa-crown text-4xl mb-3"></i>
+                                <div class="text-xl font-royal font-bold">Master Chef</div>
+                                <div class="text-sm font-elegant">25+ Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 reveal-traditional">
+                    <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-8 py-3 mb-8 border border-gold-400/30">
+                        <i class="fas fa-star text-gold-400 mr-3"></i>
+                        <span class="text-script text-gold-300 text-lg">Our Heritage Story</span>
+                    </div>
+                    
+                    <h2 class="text-5xl md:text-6xl title-royal mb-8">A Royal Culinary Legacy</h2>
+                    <p class="text-xl text-elegant mb-8 leading-relaxed">
+                        Born from the royal kitchens of Rajasthan in 1999, Spice Trail Fine Dining 
+                        has been a guardian of authentic Indian culinary traditions. Our master chefs, 
+                        trained in the ancient art of Indian cooking, bring you recipes that have 
+                        graced the tables of maharajas and emperors.
+                    </p>
+                    <p class="text-xl text-elegant mb-10 leading-relaxed">
+                        Every spice in our kitchen tells a story, every dish carries the essence 
+                        of its origin, and every meal becomes a journey through the diverse 
+                        culinary landscapes of incredible India.
+                    </p>
+                    
+                    <!-- Royal Heritage Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+                        <div class="text-center">
+                            <div class="text-4xl title-royal text-gold-400 mb-2">25+</div>
+                            <div class="text-elegant text-gold-300 text-sm">Years Heritage</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl title-royal text-gold-400 mb-2">150K+</div>
+                            <div class="text-elegant text-gold-300 text-sm">Royal Guests</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl title-royal text-gold-400 mb-2">75+</div>
+                            <div class="text-elegant text-gold-300 text-sm">Authentic Recipes</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl title-royal text-gold-400 mb-2">12</div>
+                            <div class="text-elegant text-gold-300 text-sm">Master Chefs</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-royal-800/50 to-royal-700/50 p-8 rounded-2xl border border-gold-400/30 backdrop-blur-md">
+                        <h4 class="font-royal font-bold text-gold-300 mb-4 flex items-center text-xl">
+                            <i class="fas fa-quote-left text-gold-400 mr-3"></i>
+                            Our Royal Promise
+                        </h4>
+                        <p class="text-elegant text-gold-200 leading-relaxed">
+                            "We pledge to honor the culinary traditions of India while creating 
+                            new memories for every guest. Every meal at Spice Trail is not just 
+                            dining, but a celebration of India's rich heritage and hospitality."
+                        </p>
+                        <div class="text-script text-gold-400 text-right mt-4 text-lg">
+                            - Chef Maharaj Singh, Executive Chef
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Royal Reservation Section -->
+    <section id="reservations" class="py-24 relative">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-20 reveal-traditional">
+                    <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-8 py-3 mb-8 border border-gold-400/30">
+                        <i class="fas fa-crown text-gold-400 mr-3"></i>
+                        <span class="text-script text-gold-300 text-lg">Reserve Your Royal Experience</span>
+                    </div>
+                    <h2 class="text-5xl md:text-6xl title-royal mb-8">Book Your Majestic Table</h2>
+                    <p class="text-xl text-elegant">
+                        Secure your place in our royal dining hall for an unforgettable culinary journey
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-royal-800/40 to-royal-700/40 backdrop-blur-md rounded-3xl p-10 border-2 border-gold-400/30 reveal-traditional">
+                    <form id="royal-booking-form" class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="form-label-elegant">
+                                    <i class="fas fa-user-crown text-gold-400 mr-3"></i>
+                                    Guest Name *
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    id="royal-name"
+                                    required
+                                    class="form-elegant"
+                                    placeholder="Enter your distinguished name"
+                                />
+                            </div>
+                            
+                            <div>
+                                <label class="form-label-elegant">
+                                    <i class="fas fa-phone text-gold-400 mr-3"></i>
+                                    Royal Contact *
+                                </label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    id="royal-phone"
+                                    required
+                                    class="form-elegant"
+                                    placeholder="+91 98000 00000"
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="form-label-elegant">
+                                <i class="fas fa-envelope text-gold-400 mr-3"></i>
+                                Email Address
+                            </label>
+                            <input
+                                type="email"
+                                name="email"
+                                id="royal-email"
+                                class="form-elegant"
+                                placeholder="your.email@example.com"
+                            />
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div>
+                                <label class="form-label-elegant">
+                                    <i class="fas fa-calendar-alt text-gold-400 mr-3"></i>
+                                    Dining Date *
+                                </label>
+                                <input
+                                    type="date"
+                                    name="date"
+                                    id="royal-date"
+                                    required
+                                    class="form-elegant"
+                                />
+                            </div>
+                            
+                            <div>
+                                <label class="form-label-elegant">
+                                    <i class="fas fa-clock text-gold-400 mr-3"></i>
+                                    Preferred Time *
+                                </label>
+                                <select
+                                    name="time"
+                                    id="royal-time"
+                                    required
+                                    class="form-elegant"
+                                >
+                                    <option value="">Select royal time</option>
+                                    <option value="12:00 PM">12:00 PM - Lunch</option>
+                                    <option value="12:30 PM">12:30 PM - Lunch</option>
+                                    <option value="1:00 PM">1:00 PM - Lunch</option>
+                                    <option value="1:30 PM">1:30 PM - Lunch</option>
+                                    <option value="2:00 PM">2:00 PM - Lunch</option>
+                                    <option value="7:00 PM">7:00 PM - Dinner</option>
+                                    <option value="7:30 PM">7:30 PM - Dinner</option>
+                                    <option value="8:00 PM">8:00 PM - Dinner</option>
+                                    <option value="8:30 PM">8:30 PM - Dinner</option>
+                                    <option value="9:00 PM">9:00 PM - Dinner</option>
+                                    <option value="9:30 PM">9:30 PM - Dinner</option>
+                                    <option value="10:00 PM">10:00 PM - Dinner</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="form-label-elegant">
+                                    <i class="fas fa-users text-gold-400 mr-3"></i>
+                                    Royal Party *
+                                </label>
+                                <select
+                                    name="guests"
+                                    id="royal-guests"
+                                    required
+                                    class="form-elegant"
+                                >
+                                    <option value="">Select guests</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="7">7 Guests</option>
+                                    <option value="8">8 Guests</option>
+                                    <option value="10+">Royal Banquet (10+)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Royal Seating Preferences -->
+                        <div>
+                            <label class="form-label-elegant">
+                                <i class="fas fa-throne text-gold-400 mr-3"></i>
+                                Royal Seating Preference
+                            </label>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <label class="flex items-center p-6 border-2 border-gold-400/20 rounded-2xl cursor-pointer hover:border-gold-400/40 transition-colors duration-300 bg-royal-800/20">
+                                    <input type="radio" name="seating-preference" value="Royal Hall" class="mr-4 text-gold-500" checked>
+                                    <div>
+                                        <div class="font-royal font-medium text-gold-300 text-lg">👑 Royal Hall</div>
+                                        <div class="text-elegant text-gold-400 text-sm">Majestic indoor dining</div>
+                                    </div>
+                                </label>
+                                <label class="flex items-center p-6 border-2 border-gold-400/20 rounded-2xl cursor-pointer hover:border-gold-400/40 transition-colors duration-300 bg-royal-800/20">
+                                    <input type="radio" name="seating-preference" value="Garden Terrace" class="mr-4 text-gold-500">
+                                    <div>
+                                        <div class="font-royal font-medium text-gold-300 text-lg">🌿 Garden Terrace</div>
+                                        <div class="text-elegant text-gold-400 text-sm">Outdoor royal garden</div>
+                                    </div>
+                                </label>
+                                <label class="flex items-center p-6 border-2 border-gold-400/20 rounded-2xl cursor-pointer hover:border-gold-400/40 transition-colors duration-300 bg-royal-800/20">
+                                    <input type="radio" name="seating-preference" value="Private Chamber" class="mr-4 text-gold-500">
+                                    <div>
+                                        <div class="font-royal font-medium text-gold-300 text-lg">🏰 Private Chamber</div>
+                                        <div class="text-elegant text-gold-400 text-sm">Exclusive royal suite</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="form-label-elegant">
+                                <i class="fas fa-scroll text-gold-400 mr-3"></i>
+                                Royal Requests & Special Occasions
+                            </label>
+                            <textarea
+                                name="requests"
+                                id="royal-requests"
+                                rows="5"
+                                class="form-elegant resize-none"
+                                placeholder="Please share any special requests, dietary preferences, celebration details, or royal requirements for your visit..."
+                            ></textarea>
+                        </div>
+
+                        <div class="text-center">
+                            <button
+                                type="submit"
+                                class="btn-royal text-xl px-16 py-6"
+                            >
+                                <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                                Confirm Royal Reservation
+                            </button>
+                            <p class="text-elegant text-gold-400 mt-6">
+                                <i class="fas fa-shield-alt text-gold-500 mr-2"></i>
+                                Complimentary reservation • Royal treatment guaranteed • Flexible modifications
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traditional Gallery Section -->
+    <section id="gallery" class="py-24 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-20 reveal-traditional">
+                <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-8 py-3 mb-8 border border-gold-400/30">
+                    <i class="fas fa-camera text-gold-400 mr-3"></i>
+                    <span class="text-script text-gold-300 text-lg">Royal Visual Feast</span>
+                </div>
+                <h2 class="text-5xl md:text-6xl title-royal mb-8">Culinary Artistry Gallery</h2>
+                <p class="text-xl text-elegant">
+                    Witness the beauty of our traditional dishes and royal dining experience
+                </p>
+            </div>
+
+            <div class="gallery-traditional reveal-traditional">
+                <div class="gallery-item-traditional">
+                    <img src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Butter Chicken Royal" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
+                    <div class="gallery-overlay-traditional">
+                        <div class="text-center">
+                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Butter Chicken Royale</h3>
+                            <p class="text-elegant text-gold-400">Our signature royal delicacy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item-traditional">
+                    <img src="https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Hyderabadi Biryani" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
+                    <div class="gallery-overlay-traditional">
+                        <div class="text-center">
+                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Biryani Hyderabadi</h3>
+                            <p class="text-elegant text-gold-400">Aromatic royal rice delight</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item-traditional">
+                    <img src="https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Tandoori Platter" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
+                    <div class="gallery-overlay-traditional">
+                        <div class="text-center">
+                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Tandoori Royal Platter</h3>
+                            <p class="text-elegant text-gold-400">Grilled to perfection</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item-traditional">
+                    <img src="https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Fresh Naan" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
+                    <div class="gallery-overlay-traditional">
+                        <div class="text-center">
+                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Tandoor Fresh Naan</h3>
+                            <p class="text-elegant text-gold-400">Straight from royal tandoor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item-traditional">
+                    <img src="https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Indian Sweets" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
+                    <div class="gallery-overlay-traditional">
+                        <div class="text-center">
+                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Royal Sweet Collection</h3>
+                            <p class="text-elegant text-gold-400">Traditional mithai assortment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item-traditional">
+                    <img src="https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Masala Chai" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
+                    <div class="gallery-overlay-traditional">
+                        <div class="text-center">
+                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Royal Masala Chai</h3>
+                            <p class="text-elegant text-gold-400">Authentic spiced tea</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item-traditional">
+                    <img src="https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Dining Ambiance" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
+                    <div class="gallery-overlay-traditional">
+                        <div class="text-center">
+                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Royal Dining Hall</h3>
+                            <p class="text-elegant text-gold-400">Majestic ambiance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item-traditional">
+                    <img src="https://images.pexels.com/photos/1907228/pexels-photo-1907228.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Curry Selection" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
+                    <div class="gallery-overlay-traditional">
+                        <div class="text-center">
+                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Royal Curry Selection</h3>
+                            <p class="text-elegant text-gold-400">Rich traditional flavors</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Royal Footer -->
+    <footer class="bg-gradient-to-b from-royal-900 to-royal-950 text-gold-200 py-20 border-t-4 border-gold-400">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="restaurant-logo mb-8">
+                        <div class="logo-mandala"></div>
+                        <div>
+                            <div class="restaurant-name">Spice Trail</div>
+                            <div class="restaurant-tagline">Fine Dining</div>
+                        </div>
+                    </div>
+                    <p class="text-elegant mb-8 max-w-md leading-relaxed text-lg">
+                        Immerse yourself in the royal heritage of Indian cuisine. 
+                        Where every meal is a celebration of tradition, every flavor tells a story, 
+                        and every visit becomes a cherished memory.
+                    </p>
+                    
+                    <!-- Royal Social Media Links -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gold-500/20 p-4 rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-110 border border-gold-400/30">
+                            <i class="fab fa-facebook text-gold-400 hover:text-royal-900 text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gold-500/20 p-4 rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-110 border border-gold-400/30">
+                            <i class="fab fa-instagram text-gold-400 hover:text-royal-900 text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gold-500/20 p-4 rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-110 border border-gold-400/30">
+                            <i class="fab fa-twitter text-gold-400 hover:text-royal-900 text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gold-500/20 p-4 rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-110 border border-gold-400/30">
+                            <i class="fab fa-youtube text-gold-400 hover:text-royal-900 text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-green-600/20 p-4 rounded-full hover:bg-green-600 transition-all duration-300 transform hover:scale-110 border border-green-400/30">
+                            <i class="fab fa-whatsapp text-green-400 hover:text-white text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-royal font-bold mb-8 text-gold-300">Royal Navigation</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#home" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-lg"><i class="fas fa-chevron-right mr-3 text-xs"></i>🏛️ Royal Home</a></li>
+                        <li><a href="#menu" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-lg"><i class="fas fa-chevron-right mr-3 text-xs"></i>📜 Heritage Menu</a></li>
+                        <li><a href="#about" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-lg"><i class="fas fa-chevron-right mr-3 text-xs"></i>👑 Our Legacy</a></li>
+                        <li><a href="#reservations" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-lg"><i class="fas fa-chevron-right mr-3 text-xs"></i>🍽️ Royal Booking</a></li>
+                        <li><a href="#gallery" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-lg"><i class="fas fa-chevron-right mr-3 text-xs"></i>📸 Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-royal font-bold mb-8 text-gold-300">Royal Contact</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start text-elegant">
+                            <i class="fas fa-map-marker-alt text-gold-400 mr-4 mt-1"></i>
+                            <span class="text-lg">Palace Road, Heritage District<br />New Delhi, India 110001</span>
+                        </div>
+                        <div class="flex items-center text-elegant">
+                            <i class="fas fa-phone text-gold-400 mr-4"></i>
+                            <span class="text-lg">+91 98000 00000</span>
+                        </div>
+                        <div class="flex items-center text-elegant">
+                            <i class="fas fa-envelope text-gold-400 mr-4"></i>
+                            <span class="text-lg">royal@spicetrail.in</span>
+                        </div>
+                        <div class="flex items-center text-elegant">
+                            <i class="fas fa-clock text-gold-400 mr-4"></i>
+                            <span class="text-lg">Daily: 12 PM - 11 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Royal Footer Bottom -->
+            <div class="border-t-2 border-gold-400/30 pt-12">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-elegant mb-6 md:mb-0">
+                        <p class="text-lg">&copy; 2024 Spice Trail Fine Dining. All Royal Rights Reserved.</p>
+                        <p class="text-sm text-gold-400">Authentic Indian Heritage • Licensed Restaurant • GST: 07XXXXX0000X1Z5</p>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <a href="#" class="text-gold-400 hover:text-gold-300 text-sm transition-colors duration-300">Privacy Policy</a>
+                        <span class="text-gold-600">|</span>
+                        <a href="#" class="text-gold-400 hover:text-gold-300 text-sm transition-colors duration-300">Terms of Service</a>
+                        <span class="text-gold-600">|</span>
+                        <p class="text-gold-400 font-script font-bold text-lg">
+                            Digital presence by amazingads95
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Elegant Watermark -->
+    <div class="watermark-elegant">
+        <i class="fas fa-palette mr-2"></i>
+        crafted by amazingads95
+    </div>
+
+    <!-- Royal JavaScript -->
+    <script>
+        // Authentic Indian restaurant experience crafted by amazingads95
+        
+        // Royal Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loading-screen');
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                    document.body.style.overflow = 'visible';
+                    initializeRoyalAnimations();
+                }, 1000);
+            }, 2500);
+        });
+
+        // Initialize Royal Animations
+        function initializeRoyalAnimations() {
+            setupTraditionalObserver();
+        }
+
+        // Royal Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const icon = this.querySelector('i');
+            
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            } else {
+                mobileMenu.classList.add('active');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Smooth Royal Scrolling Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const header = document.querySelector('header');
+                    const headerHeight = header ? header.offsetHeight : 90;
+                    const targetPosition = target.offsetTop - headerHeight - 30;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+                
+                // Close royal mobile menu
+                const mobileMenu = document.getElementById('mobile-menu');
+                const menuBtn = document.querySelector('#mobile-menu-btn i');
+                mobileMenu.classList.remove('active');
+                menuBtn.classList.add('fa-bars');
+                menuBtn.classList.remove('fa-times');
+            });
+        });
+
+        // Royal Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.pageYOffset > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Traditional Menu Category Switching
+        function showCategoryTraditional(category) {
+            // Hide all menu categories
+            document.querySelectorAll('.menu-category').forEach(menu => {
+                menu.classList.add('hidden');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-traditional').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected category
+            document.getElementById(category + '-menu').classList.remove('hidden');
+            
+            // Add active class to selected tab
+            document.getElementById(category + '-tab').classList.add('active');
+        }
+
+        // Set minimum date for royal booking
+        const royalDate = document.getElementById('royal-date');
+        if (royalDate) {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            royalDate.min = tomorrow.toISOString().split('T')[0];
+        }
+
+        // Royal Table Booking Form Submission
+        document.getElementById('royal-booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            const seatingPreference = document.querySelector('input[name="seating-preference"]:checked')?.value || 'Royal Hall';
+            
+            // Royal form validation
+            if (!data.name || !data.phone || !data.date || !data.time || !data.guests) {
+                showRoyalNotification('Please complete all required royal fields for your reservation.', 'error');
+                return;
+            }
+
+            // Royal phone validation
+            const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+            if (!phoneRegex.test(data.phone.replace(/\s/g, ''))) {
+                showRoyalNotification('Please provide a valid contact number for your royal reservation.', 'error');
+                return;
+            }
+
+            // Royal date validation
+            const selectedDate = new Date(data.date);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            if (selectedDate <= today) {
+                showRoyalNotification('Please select a future date for your royal dining experience.', 'error');
+                return;
+            }
+            
+            // Create royal WhatsApp message
+            const message = `🏰 *ROYAL TABLE RESERVATION*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👑 *Distinguished Guest Details:*
+• Name: ${data.name}
+• Royal Contact: ${data.phone}
+• Email: ${data.email || 'Not provided'}
+
+🍽️ *Royal Dining Preferences:*
+• Date: ${data.date}
+• Time: ${data.time}
+• Royal Party Size: ${data.guests}
+• Preferred Seating: ${seatingPreference}
+
+💎 *Special Royal Requests:*
+${data.requests || 'No special requests'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⏰ We shall confirm your royal reservation within 30 minutes.
+🎭 Prepare for an extraordinary culinary journey!
+
+*🌟 Spice Trail Fine Dining - Where Every Meal is Royal*
+*Digital presence by amazingads95*`;
+            
+            const phoneNumber = '+919800000000'; // Royal dummy number
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+            
+            // Royal success feedback
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-crown mr-3"></i>Royal Reservation Confirmed!';
+            button.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            
+            showRoyalNotification('Your royal table reservation has been sent! Our palace staff will confirm your booking within 30 minutes. 👑', 'success');
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.style.background = '';
+                this.reset();
+                if (royalDate) {
+                    const tomorrow = new Date();
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    royalDate.min = tomorrow.toISOString().split('T')[0];
+                }
+            }, 5000);
+        });
+
+        // Traditional WhatsApp Chat Function
+        function openWhatsAppTraditional() {
+            const message = `🏰 *Namaste from Spice Trail Fine Dining!*
+
+🌟 I'm interested in experiencing your royal Indian cuisine. Could you please share information about:
+
+👑 *Royal Menu Highlights & Chef's Specialties*
+🍽️ *Table availability for royal dining*
+🎉 *Special celebrations or royal banquet packages*
+🏛️ *Palace location and royal directions*
+💎 *Current royal offers and traditional events*
+
+I'm eager to embark on this culinary journey through India's rich heritage!
+
+🙏 Dhanyawad (Thank you)`;
+            
+            const phoneNumber = '+919800000000';
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Royal Notification System
+        function showRoyalNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-28 right-4 z-50 p-6 rounded-2xl shadow-2xl max-w-md transform translate-x-full transition-transform duration-500 border-2`;
+            
+            switch(type) {
+                case 'success':
+                    notification.classList.add('bg-gradient-to-r', 'from-green-800', 'to-green-700', 'text-green-100', 'border-green-500');
+                    notification.innerHTML = `<i class="fas fa-crown mr-3 text-xl"></i><span class="font-elegant text-lg">${message}</span>`;
+                    break;
+                case 'error':
+                    notification.classList.add('bg-gradient-to-r', 'from-red-800', 'to-red-700', 'text-red-100', 'border-red-500');
+                    notification.innerHTML = `<i class="fas fa-exclamation-triangle mr-3 text-xl"></i><span class="font-elegant text-lg">${message}</span>`;
+                    break;
+                default:
+                    notification.classList.add('bg-gradient-to-r', 'from-royal-800', 'to-royal-700', 'text-gold-100', 'border-gold-500');
+                    notification.innerHTML = `<i class="fas fa-info-circle mr-3 text-xl"></i><span class="font-elegant text-lg">${message}</span>`;
+            }
+            
+            // Mobile optimization for royal notifications
+            if (window.innerWidth <= 768) {
+                notification.classList.remove('right-4');
+                notification.classList.add('right-2', 'left-2', 'max-w-none');
+            }
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.transform = window.innerWidth <= 768 ? 'translateY(-100%)' : 'translateX(100%)';
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 500);
+            }, 6000);
+        }
+
+        // Traditional Intersection Observer for Reveal Animations
+        function setupTraditionalObserver() {
+            const observerOptions = {
+                threshold: window.innerWidth <= 768 ? 0.05 : 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.getAttribute('data-delay') || 0;
+                        setTimeout(() => {
+                            entry.target.classList.add('active');
+                        }, window.innerWidth <= 768 ? Math.min(delay, 300) : delay);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-traditional').forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // Royal form enhancements
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('.form-elegant');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.borderColor = '#d97706';
+                    this.style.boxShadow = '0 0 0 4px rgba(217, 119, 6, 0.1), inset 0 2px 4px rgba(251, 191, 36, 0.1)';
+                });
+                
+                input.addEventListener('blur', function() {
+                    if (!this.value) {
+                        this.style.borderColor = 'rgba(217, 119, 6, 0.2)';
+                        this.style.boxShadow = 'none';
+                    }
+                });
+
+                // Prevent zoom on iOS for royal forms
+                if (window.innerWidth <= 768) {
+                    input.addEventListener('focus', function() {
+                        this.style.fontSize = '16px';
+                    });
+                }
+            });
+        });
+
+        // Handle royal orientation change
+        window.addEventListener('orientationchange', function() {
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 600);
+        });
+
+        // Authentic Indian restaurant experience crafted by amazingads95
+    </script>
+
+    <!-- Authentic Indian heritage crafted by amazingads95 -->
+</body>
+</html>
