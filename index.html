@@ -136,7 +136,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Royal Header */
+        /* Royal Header - Fixed for Mobile */
         .royal-header {
             position: fixed;
             top: 0;
@@ -155,7 +155,7 @@
             border-bottom: 2px solid rgba(217, 119, 6, 0.5);
         }
 
-        /* Traditional Logo */
+        /* Traditional Logo - Improved for Mobile */
         .restaurant-logo {
             position: relative;
             display: flex;
@@ -178,9 +178,9 @@
 
         .logo-mandala::before {
             content: '👑';
-    font-size: 24px;
-    color: #fbbf24;
-    animation: gentle-rotate 6s linear infinite;
+            font-size: 24px;
+            color: #fbbf24;
+            animation: gentle-rotate 6s linear infinite;
         }
 
         @keyframes gentle-glow {
@@ -210,7 +210,7 @@
             margin-top: -5px;
         }
 
-        /* Traditional Navigation */
+        /* Traditional Navigation - Improved for Mobile */
         .nav-traditional {
             position: relative;
         }
@@ -250,7 +250,7 @@
             transform: translateY(-2px);
         }
 
-        /* Royal Buttons */
+        /* Royal Buttons - Improved for Mobile */
         .btn-royal {
             font-family: 'Cormorant Garamond', serif;
             background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
@@ -309,27 +309,57 @@
             color: #fbbf24;
         }
 
-        /* Majestic Hero Section */
-        .hero-royal {
-            min-height: 100vh;
-            background: 
-                linear-gradient(135deg, rgba(26, 12, 8, 0.8) 0%, rgba(45, 24, 16, 0.6) 50%, rgba(26, 12, 8, 0.8) 100%),
-                url('https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+        /* Majestic Hero Section - Improved for Mobile */
+       .hero-royal {
+    background: 
+        linear-gradient(135deg, rgba(26, 12, 8, 0.8) 0%, rgba(45, 24, 16, 0.6) 50%, rgba(26, 12, 8, 0.8) 100%),
+        url('https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 100px; /* Add this for desktop header spacing */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
 
-        @media (max-width: 768px) {
-            .hero-royal {
-                background-attachment: scroll;
-            }
-        }
+@media (max-width: 768px) {
+    .hero-royal {
+         background-size: cover;
+        background-position: center 30%; 
+        background-attachment: scroll;
+    }
+
+    .hero-royal .inline-flex {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .hero-royal p {
+        margin-bottom: 2rem !important;
+    }
+    
+    .hero-royal .flex.flex-col {
+        margin-bottom: 2rem !important;
+    }
+    
+    .hero-royal .grid {
+        margin-top: 2rem !important;
+    }
+
+    /* Explore Further button sizing */
+    .hero-royal .inline-flex.flex-col {
+        margin-top: 2rem !important;
+    }
+    
+    .hero-royal .text-script.text-base {
+        font-size: 1rem !important;
+    }
+    
+    .hero-royal .fa-angle-double-down {
+        font-size: 1.5rem !important;
+    }
+
+}
 
         .hero-royal::before {
             content: '';
@@ -429,23 +459,23 @@
 
         .veg-traditional {
            background: linear-gradient(135deg, #22c55e, #16a34a);
-    color: white;
-    border-color: #fbbf24;
-    box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
-    border-radius: 4px;
-    width: 22px;
-    height: 22px;
+            color: white;
+            border-color: #fbbf24;
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+            border-radius: 4px;
+            width: 22px;
+            height: 22px;
         }
 
         .non-veg-traditional {
             background: linear-gradient(135deg, #dc2626, #b91c1c);
-    color: white;
-    border-color: #fbbf24;
-    box-shadow: 0 0 10px rgba(220, 38, 38, 0.4);
-    /* Add square shape for FSSAI */
-    border-radius: 4px;
-    width: 22px;
-    height: 22px;
+            color: white;
+            border-color: #fbbf24;
+            box-shadow: 0 0 10px rgba(220, 38, 38, 0.4);
+            /* Add square shape for FSSAI */
+            border-radius: 4px;
+            width: 22px;
+            height: 22px;
         }
 
         /* Traditional Tab System */
@@ -587,7 +617,7 @@
             opacity: 1;
         }
 
-        /* Mobile Menu Traditional */
+        /* Mobile Menu Traditional - Fixed for Mobile */
         .mobile-menu-traditional {
             background: linear-gradient(145deg, rgba(26, 12, 8, 0.98) 0%, rgba(45, 24, 16, 0.98) 100%);
             backdrop-filter: blur(20px);
@@ -598,6 +628,11 @@
             opacity: 0;
             transition: all 0.4s ease;
             overflow: hidden;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 1001;
         }
 
         .mobile-menu-traditional.active {
@@ -732,6 +767,100 @@
             display: none !important;
         }
 
+        /* Mobile-specific fixes */
+        @media (max-width: 768px) {
+            /* Header fixes */
+            .royal-header {
+                padding: 10px 0;
+            }
+            
+            .restaurant-logo {
+                gap: 10px;
+            }
+            
+            .logo-mandala {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .logo-mandala::before {
+                font-size: 20px;
+            }
+            
+            .restaurant-name {
+                font-size: 20px;
+            }
+            
+            .restaurant-tagline {
+                font-size: 14px;
+            }
+            
+            /* Hero section fixes */
+             .hero-royal h1 {
+        font-size: 2.5rem !important;
+        margin-bottom: 1rem !important;
+        padding-top: 1rem !important;
+    }
+    
+    .hero-royal .text-script {
+        font-size: 2.5rem !important;
+        margin-top: 0.5rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Additional hero spacing fixes */
+    .hero-royal .inline-flex {
+        margin-bottom: 2rem !important;
+        margin-top: 1rem !important;
+    }
+    
+    .hero-royal p {
+        margin-bottom: 2.5rem !important;
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .hero-royal .flex.flex-col {
+        margin-bottom: 2.5rem !important;
+        gap: 1rem !important;
+    }
+    
+    .hero-royal .grid {
+        margin-top: 3rem !important;
+    }
+            
+            /* Button fixes */
+            .btn-royal {
+                padding: 12px 20px;
+                font-size: 14px;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            /* Menu fixes */
+            .menu-card-traditional {
+                padding: 20px;
+            }
+            
+            /* Form fixes */
+            .form-elegant {
+                font-size: 16px; /* Prevent zoom on iOS */
+            }
+            
+            /* Gallery fixes */
+            .gallery-traditional {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Tab fixes */
+            .tab-traditional {
+                padding: 10px 16px;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+        }
+
         /* Respect reduced motion */
         @media (prefers-reduced-motion: reduce) {
             * {
@@ -760,9 +889,9 @@
         <i class="fab fa-whatsapp"></i>
     </div>
 
-    <!-- Royal Header -->
+    <!-- Royal Header - Fixed for Mobile -->
     <header class="royal-header" id="header">
-        <nav class="container mx-auto px-4 py-4">
+        <nav class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
                 <div class="restaurant-logo">
                     <div class="logo-mandala"></div>
@@ -789,14 +918,14 @@
                 </button>
             </div>
             
-            <!-- Traditional Mobile Menu -->
+            <!-- Traditional Mobile Menu - Fixed for Mobile -->
             <div id="mobile-menu" class="mobile-menu-traditional md:hidden">
-                <div class="p-6 space-y-4">
-                    <a href="#home" class="block py-4 px-6 text-gold-300 hover:text-gold-400 hover:bg-royal-800 rounded-lg transition duration-300 text-lg font-elegant">🏛️ Home</a>
-                    <a href="#menu" class="block py-4 px-6 text-gold-300 hover:text-gold-400 hover:bg-royal-800 rounded-lg transition duration-300 text-lg font-elegant">📜 Menu</a>
-                    <a href="#about" class="block py-4 px-6 text-gold-300 hover:text-gold-400 hover:bg-royal-800 rounded-lg transition duration-300 text-lg font-elegant">👑 About</a>
-                    <a href="#reservations" class="block py-4 px-6 text-gold-300 hover:text-gold-400 hover:bg-royal-800 rounded-lg transition duration-300 text-lg font-elegant">🍽️ Reservations</a>
-                    <a href="#reservations" class="btn-royal w-full mt-4">
+                <div class="p-4 space-y-2">
+                    <a href="#home" class="block py-3 px-4 text-gold-300 hover:text-gold-400 hover:bg-royal-800 rounded-lg transition duration-300 text-lg font-elegant">🏛️ Home</a>
+                    <a href="#menu" class="block py-3 px-4 text-gold-300 hover:text-gold-400 hover:bg-royal-800 rounded-lg transition duration-300 text-lg font-elegant">📜 Menu</a>
+                    <a href="#about" class="block py-3 px-4 text-gold-300 hover:text-gold-400 hover:bg-royal-800 rounded-lg transition duration-300 text-lg font-elegant">👑 About</a>
+                    <a href="#reservations" class="block py-3 px-4 text-gold-300 hover:text-gold-400 hover:bg-royal-800 rounded-lg transition duration-300 text-lg font-elegant">🍽️ Reservations</a>
+                    <a href="#reservations" class="btn-royal w-full mt-2">
                         <i class="fas fa-crown mr-2"></i>
                         Royal Booking
                     </a>
@@ -805,88 +934,88 @@
         </nav>
     </header>
 
-    <!-- Majestic Hero Section -->
+    <!-- Majestic Hero Section - Fixed for Mobile -->
     <section id="home" class="hero-royal">
         <!-- Floating Royal Ornaments -->
         <div class="royal-ornament">🪷</div>
-       <div class="royal-ornament">🏰</div>
+        <div class="royal-ornament">🏰</div>
         <div class="royal-ornament">🏵️</div>
         
         <div class="container mx-auto px-4 relative z-10 text-center">
             <div class="reveal-traditional">
-                <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-8 py-3 mb-8 border border-gold-400/30">
-                    <i class="fas fa-star text-gold-400 mr-3"></i>
-                    <span class="text-script text-gold-300 text-lg">Awarded Best Indian Restaurant 2024</span>
-                </div>
+                <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-4 py-2 mb-6 md:mb-8 border border-gold-400/30">
+    <i class="fas fa-star text-gold-400 mr-2 md:mr-3 text-sm md:text-base"></i>
+    <span class="text-script text-gold-300 text-sm md:text-lg">Awarded Best Indian Restaurant 2024</span>
+</div>
                 
-                <h1 class="text-5xl md:text-7xl lg:text-8xl title-royal mb-8 leading-tight">
+                <h1 class="text-4xl md:text-7xl lg:text-8xl title-royal mb-6 md:mb-8 leading-tight">
                     Exquisite
-                    <span class="text-script text-6xl md:text-8xl lg:text-9xl block text-gold-400">
+                    <span class="text-script text-4xl md:text-8xl lg:text-9xl block text-gold-400 mt-2">
                         Indian Cuisine
                     </span>
                 </h1>
                 
-                <p class="text-xl md:text-2xl lg:text-3xl text-elegant mb-12 max-w-4xl mx-auto opacity-90 leading-relaxed">
+                <p class="text-lg md:text-2xl lg:text-3xl text-elegant mb-8 md:mb-12 max-w-4xl mx-auto opacity-90 leading-relaxed">
                     Embark on a culinary journey through the royal kitchens of India. 
                     Where every dish tells a story of tradition, every spice sings of heritage, 
                     and every meal becomes a cherished memory.
                 </p>
                 
-                <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="#menu" class="btn-royal text-xl px-12 py-5">
+                <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
+                    <a href="#menu" class="btn-royal text-lg md:text-xl px-8 md:px-12 py-4 md:py-5">
                         <i class="fas fa-scroll mr-3"></i>
                         Discover Our Menu
                     </a>
-                    <a href="#reservations" class="btn-royal btn-royal-outline text-xl px-12 py-5">
+                    <a href="#reservations" class="btn-royal btn-royal-outline text-lg md:text-xl px-8 md:px-12 py-4 md:py-5">
                         <i class="fas fa-calendar-alt mr-3"></i>
                         Reserve Your Table
                     </a>
                 </div>
                 
-                <!-- Traditional Stats -->
-                <div class="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
+                             <!-- Traditional Stats -->
+                <div class="grid grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-2xl mx-auto">
                     <div class="text-center">
-                        <div class="text-4xl md:text-5xl title-royal text-gold-400 mb-2">25+</div>
-                        <div class="text-elegant text-gold-300">Years of Excellence</div>
+                        <div class="text-2xl md:text-5xl title-royal text-gold-400 mb-2">25+</div>
+                        <div class="text-elegant text-gold-300 text-sm md:text-base">Years of Excellence</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl md:text-5xl title-royal text-gold-400 mb-2">100K+</div>
-                        <div class="text-elegant text-gold-300">Happy Diners</div>
+                        <div class="text-2xl md:text-5xl title-royal text-gold-400 mb-2">100K+</div>
+                        <div class="text-elegant text-gold-300 text-sm md:text-base">Happy Diners</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl md:text-5xl title-royal text-gold-400 mb-2">50+</div>
-                        <div class="text-elegant text-gold-300">Traditional Recipes</div>
+                        <div class="text-2xl md:text-5xl title-royal text-gold-400 mb-2">50+</div>
+                        <div class="text-elegant text-gold-300 text-sm md:text-base">Traditional Recipes</div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gold-400 animate-bounce cursor-pointer" onclick="document.querySelector('#menu').scrollIntoView({behavior: 'smooth'})">
-            <div class="flex flex-col items-center">
-                <span class="text-script text-lg mb-2">Explore Further</span>
-                <i class="fas fa-angle-double-down text-2xl"></i>
+
+                <!-- Explore Further Button -->
+                <div class="mt-12 md:mt-16 text-center">
+                    <div class="inline-flex flex-col items-center text-gold-400 animate-bounce cursor-pointer" onclick="scrollToMenu()">
+                        <span class="text-script text-base md:text-lg mb-2">Explore Further</span>
+                        <i class="fas fa-angle-double-down text-xl md:text-2xl"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Traditional Menu Section -->
-    <section id="menu" class="py-24 relative">
+    <section id="menu" class="py-16 md:py-24 relative">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-20 reveal-traditional">
-                <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-8 py-3 mb-8 border border-gold-400/30">
+            <div class="text-center mb-12 md:mb-20 reveal-traditional">
+                <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-6 py-2 mb-6 border border-gold-400/30">
                     <i class="fas fa-utensils text-gold-400 mr-3"></i>
-                    <span class="text-script text-gold-300 text-lg">Royal Kitchen Specialties</span>
+                    <span class="text-script text-gold-300 text-base md:text-lg">Royal Kitchen Specialties</span>
                 </div>
-                <h2 class="text-5xl md:text-6xl title-royal mb-8">Our Culinary Heritage</h2>
-                <p class="text-xl text-elegant max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-6xl title-royal mb-6 md:mb-8">Our Culinary Heritage</h2>
+                <p class="text-lg md:text-xl text-elegant max-w-4xl mx-auto">
                     Each dish is a masterpiece crafted from recipes passed down through generations, 
                     using the finest spices sourced directly from their origin lands across India.
                 </p>
             </div>
 
             <!-- Traditional Menu Categories -->
-            <div class="flex flex-wrap justify-center gap-6 mb-16 reveal-traditional">
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 mb-12 md:mb-16 reveal-traditional">
                 <button class="tab-traditional active" onclick="showCategoryTraditional('appetizers')" id="appetizers-tab">
                     <i class="fas fa-leaf mr-2"></i>Royal Appetizers
                 </button>
@@ -900,25 +1029,25 @@
 
             <!-- Royal Appetizers -->
             <div id="appetizers-menu" class="menu-category">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-traditional">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 reveal-traditional">
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Paneer Tikka Maharaja</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Paneer Tikka Maharaja</h3>
                             </div>
-                            <span class="price-royal">₹525</span>
+                            <span class="price-royal text-lg md:text-2xl">₹525</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Royal cottage cheese marinated in saffron-infused yogurt with rare spices, 
                             grilled in our traditional tandoor and served with mint chutney
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">18-22 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-pepper-hot mr-2"></i>
                                 <span class="text-elegant">Mild</span>
                             </div>
@@ -926,23 +1055,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon non-veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Seekh Kebab Nawabi</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Seekh Kebab Nawabi</h3>
                             </div>
-                            <span class="price-royal">₹675</span>
+                            <span class="price-royal text-lg md:text-2xl">₹675</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Hand-minced lamb kebabs seasoned with royal spices, charcoal-grilled 
                             and served with saffron rice and pomegranate chutney
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">25-30 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-pepper-hot mr-2"></i>
                                 <span class="text-elegant">Medium</span>
                             </div>
@@ -950,23 +1079,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Samosa Chaat Royal</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Samosa Chaat Royal</h3>
                             </div>
-                            <span class="price-royal">₹385</span>
+                            <span class="price-royal text-lg md:text-2xl">₹385</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Crispy pyramid pastries filled with spiced potatoes, topped with 
                             yogurt, tamarind chutney, and sev, garnished with fresh herbs
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">12-15 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-pepper-hot mr-2"></i>
                                 <span class="text-elegant">Mild</span>
                             </div>
@@ -974,23 +1103,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon non-veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Tandoori Jhinga</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Tandoori Jhinga</h3>
                             </div>
-                            <span class="price-royal">₹850</span>
+                            <span class="price-royal text-lg md:text-2xl">₹850</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Jumbo prawns marinated in yogurt and exotic spices, grilled in tandoor 
                             and served with curry leaves and lemon butter sauce
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">20-25 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-pepper-hot mr-2"></i>
                                 <span class="text-elegant">Medium</span>
                             </div>
@@ -998,23 +1127,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Dahi Puri Palace</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Dahi Puri Palace</h3>
                             </div>
-                            <span class="price-royal">₹325</span>
+                            <span class="price-royal text-lg md:text-2xl">₹325</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Crispy puris filled with spiced water, tamarind chutney, and yogurt, 
                             a burst of flavors in every bite from Mumbai's streets
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">8-12 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-pepper-hot mr-2"></i>
                                 <span class="text-elegant">Tangy</span>
                             </div>
@@ -1022,23 +1151,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon non-veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Chicken Malai Tikka</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Chicken Malai Tikka</h3>
                             </div>
-                            <span class="price-royal">₹625</span>
+                            <span class="price-royal text-lg md:text-2xl">₹625</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Succulent chicken pieces marinated in cream cheese and mild spices, 
                             grilled to perfection and served with fresh salad
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">22-28 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-pepper-hot mr-2"></i>
                                 <span class="text-elegant">Mild</span>
                             </div>
@@ -1049,25 +1178,25 @@
 
             <!-- Majestic Mains -->
             <div id="mains-menu" class="menu-category hidden">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-traditional">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 reveal-traditional">
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon non-veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Butter Chicken Royale</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Butter Chicken Royale</h3>
                             </div>
-                            <span class="price-royal">₹950</span>
+                            <span class="price-royal text-lg md:text-2xl">₹950</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Tender chicken cooked in rich tomato-cashew gravy with cream and butter, 
                             served with basmati rice and butter naan
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">35-40 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-pepper-hot mr-2"></i>
                                 <span class="text-elegant">Mild</span>
                             </div>
@@ -1075,23 +1204,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon non-veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Rogan Josh Kashmir</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Rogan Josh Kashmir</h3>
                             </div>
-                            <span class="price-royal">₹1250</span>
+                            <span class="price-royal text-lg md:text-2xl">₹1250</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Authentic Kashmiri lamb curry cooked with aromatic spices and yogurt, 
                             slow-cooked to perfection in traditional style
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">45-50 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-pepper-hot mr-2"></i>
                                 <span class="text-elegant">Medium</span>
                             </div>
@@ -1099,23 +1228,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Dal Makhani Imperial</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Dal Makhani Imperial</h3>
                             </div>
-                            <span class="price-royal">₹525</span>
+                            <span class="price-royal text-lg md:text-2xl">₹525</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Black lentils slow-cooked overnight with butter, cream, and aromatic spices, 
                             a royal favorite from Punjab's kitchens
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">30-35 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-pepper-hot mr-2"></i>
                                 <span class="text-elegant">Mild</span>
                             </div>
@@ -1123,23 +1252,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon non-veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Biryani Hyderabadi</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Biryani Hyderabadi</h3>
                             </div>
-                            <span class="price-royal">₹1150</span>
+                            <span class="price-royal text-lg md:text-2xl">₹1150</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Aromatic basmati rice layered with spiced mutton, slow-cooked in sealed pot, 
                             served with raita and shorba
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">50-60 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-pepper-hot mr-2"></i>
                                 <span class="text-elegant">Medium</span>
                             </div>
@@ -1147,23 +1276,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Paneer Makhani</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Paneer Makhani</h3>
                             </div>
-                            <span class="price-royal">₹750</span>
+                            <span class="price-royal text-lg md:text-2xl">₹750</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Cottage cheese cubes in rich tomato-cashew gravy with cream and fenugreek, 
                             served with choice of Indian bread
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">28-32 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-pepper-hot mr-2"></i>
                                 <span class="text-elegant">Mild</span>
                             </div>
@@ -1171,23 +1300,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon non-veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Fish Curry Goan</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Fish Curry Goan</h3>
                             </div>
-                            <span class="price-royal">₹1050</span>
+                            <span class="price-royal text-lg md:text-2xl">₹1050</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Fresh kingfish cooked in coconut milk with Goan spices and curry leaves, 
                             served with steamed rice
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">32-38 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-pepper-hot mr-2"></i>
                                 <span class="text-elegant">Medium</span>
                             </div>
@@ -1198,25 +1327,25 @@
 
             <!-- Sweet Endings -->
             <div id="desserts-menu" class="menu-category hidden">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-traditional">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 reveal-traditional">
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Gulab Jamun Royale</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Gulab Jamun Royale</h3>
                             </div>
-                            <span class="price-royal">₹350</span>
+                            <span class="price-royal text-lg md:text-2xl">₹350</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Soft milk dumplings soaked in cardamom-rose syrup, served warm 
                             with silver leaf and crushed pistachios
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">8-12 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-gem mr-2"></i>
                                 <span class="text-elegant">Sweet</span>
                             </div>
@@ -1224,23 +1353,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Ras Malai Bengali</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Ras Malai Bengali</h3>
                             </div>
-                            <span class="price-royal">₹425</span>
+                            <span class="price-royal text-lg md:text-2xl">₹425</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Spongy cottage cheese dumplings in thickened sweetened milk, 
                             flavored with cardamom and garnished with almonds
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">10-15 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-gem mr-2"></i>
                                 <span class="text-elegant">Sweet</span>
                             </div>
@@ -1248,23 +1377,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Kulfi Pista Malai</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Kulfi Pista Malai</h3>
                             </div>
-                            <span class="price-royal">₹375</span>
+                            <span class="price-royal text-lg md:text-2xl">₹375</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Traditional Indian ice cream made with reduced milk, pistachios, 
                             and cardamom, served with falooda and rose syrup
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">5-8 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-gem mr-2"></i>
                                 <span class="text-elegant">Sweet</span>
                             </div>
@@ -1272,23 +1401,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Gajar Halwa</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Gajar Halwa</h3>
                             </div>
-                            <span class="price-royal">₹475</span>
+                            <span class="price-royal text-lg md:text-2xl">₹475</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Rich carrot pudding slow-cooked with milk, ghee, and cardamom, 
                             garnished with cashews and served with vanilla ice cream
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">12-18 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-gem mr-2"></i>
                                 <span class="text-elegant">Sweet</span>
                             </div>
@@ -1296,23 +1425,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Jalebi Rabri</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Jalebi Rabri</h3>
                             </div>
-                            <span class="price-royal">₹325</span>
+                            <span class="price-royal text-lg md:text-2xl">₹325</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Crispy spiral sweets soaked in saffron syrup, served with 
                             thick sweetened milk reduction and chopped dry fruits
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">10-14 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-gem mr-2"></i>
                                 <span class="text-elegant">Sweet</span>
                             </div>
@@ -1320,23 +1449,23 @@
                     </div>
 
                     <div class="menu-card-traditional">
-                        <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-start justify-between mb-4 md:mb-6">
                             <div class="flex items-center">
                                 <span class="spice-icon veg-traditional">●</span>
-                                <h3 class="text-2xl title-royal text-gold-300">Shahi Tukda</h3>
+                                <h3 class="text-xl md:text-2xl title-royal text-gold-300">Shahi Tukda</h3>
                             </div>
-                            <span class="price-royal">₹450</span>
+                            <span class="price-royal text-lg md:text-2xl">₹450</span>
                         </div>
-                        <p class="text-elegant mb-6 leading-relaxed">
+                        <p class="text-elegant mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                             Royal bread pudding with fried bread slices soaked in sweetened milk, 
                             topped with nuts and edible silver foil
                         </p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-clock mr-2"></i>
                                 <span class="text-elegant">15-20 mins</span>
                             </div>
-                            <div class="flex items-center text-gold-400 text-sm">
+                            <div class="flex items-center text-gold-400 text-xs md:text-sm">
                                 <i class="fas fa-gem mr-2"></i>
                                 <span class="text-elegant">Sweet</span>
                             </div>
@@ -1348,9 +1477,9 @@
     </section>
 
     <!-- Royal About Section -->
-    <section id="about" class="py-24 relative">
+    <section id="about" class="py-16 md:py-24 relative">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
+            <div class="flex flex-col lg:flex-row items-center gap-12 md:gap-16">
                 <div class="lg:w-1/2 reveal-traditional">
                     <div class="relative">
                         <img 
@@ -1361,66 +1490,66 @@
                         />
                         
                         <!-- Royal Achievement Badge -->
-                        <div class="absolute -top-8 -right-8 bg-gradient-to-r from-gold-500 to-gold-600 text-royal-900 p-8 rounded-3xl shadow-2xl border-4 border-gold-400">
+                        <div class="absolute -top-4 md:-top-8 -right-4 md:-right-8 bg-gradient-to-r from-gold-500 to-gold-600 text-royal-900 p-4 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl border-4 border-gold-400">
                             <div class="text-center">
-                                <i class="fas fa-crown text-4xl mb-3"></i>
-                                <div class="text-xl font-royal font-bold">Master Chef</div>
-                                <div class="text-sm font-elegant">25+ Years Experience</div>
+                                <i class="fas fa-crown text-2xl md:text-4xl mb-2 md:mb-3"></i>
+                                <div class="text-lg md:text-xl font-royal font-bold">Master Chef</div>
+                                <div class="text-xs md:text-sm font-elegant">25+ Years Experience</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="lg:w-1/2 reveal-traditional">
-                    <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-8 py-3 mb-8 border border-gold-400/30">
+                    <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-6 py-2 mb-6 border border-gold-400/30">
                         <i class="fas fa-star text-gold-400 mr-3"></i>
-                        <span class="text-script text-gold-300 text-lg">Our Heritage Story</span>
+                        <span class="text-script text-gold-300 text-base md:text-lg">Our Heritage Story</span>
                     </div>
                     
-                    <h2 class="text-5xl md:text-6xl title-royal mb-8">A Royal Culinary Legacy</h2>
-                    <p class="text-xl text-elegant mb-8 leading-relaxed">
+                    <h2 class="text-3xl md:text-6xl title-royal mb-6 md:mb-8">A Royal Culinary Legacy</h2>
+                    <p class="text-lg md:text-xl text-elegant mb-6 md:mb-8 leading-relaxed">
                         Born from the royal kitchens of Rajasthan in 1999, Spice Trail Fine Dining 
                         has been a guardian of authentic Indian culinary traditions. Our master chefs, 
                         trained in the ancient art of Indian cooking, bring you recipes that have 
                         graced the tables of maharajas and emperors.
                     </p>
-                    <p class="text-xl text-elegant mb-10 leading-relaxed">
+                    <p class="text-lg md:text-xl text-elegant mb-8 md:mb-10 leading-relaxed">
                         Every spice in our kitchen tells a story, every dish carries the essence 
                         of its origin, and every meal becomes a journey through the diverse 
                         culinary landscapes of incredible India.
                     </p>
                     
                     <!-- Royal Heritage Stats -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-10">
                         <div class="text-center">
-                            <div class="text-4xl title-royal text-gold-400 mb-2">25+</div>
-                            <div class="text-elegant text-gold-300 text-sm">Years Heritage</div>
+                            <div class="text-2xl md:text-4xl title-royal text-gold-400 mb-2">25+</div>
+                            <div class="text-elegant text-gold-300 text-xs md:text-sm">Years Heritage</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl title-royal text-gold-400 mb-2">150K+</div>
-                            <div class="text-elegant text-gold-300 text-sm">Royal Guests</div>
+                            <div class="text-2xl md:text-4xl title-royal text-gold-400 mb-2">150K+</div>
+                            <div class="text-elegant text-gold-300 text-xs md:text-sm">Royal Guests</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl title-royal text-gold-400 mb-2">75+</div>
-                            <div class="text-elegant text-gold-300 text-sm">Authentic Recipes</div>
+                            <div class="text-2xl md:text-4xl title-royal text-gold-400 mb-2">75+</div>
+                            <div class="text-elegant text-gold-300 text-xs md:text-sm">Authentic Recipes</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl title-royal text-gold-400 mb-2">12</div>
-                            <div class="text-elegant text-gold-300 text-sm">Master Chefs</div>
+                            <div class="text-2xl md:text-4xl title-royal text-gold-400 mb-2">12</div>
+                            <div class="text-elegant text-gold-300 text-xs md:text-sm">Master Chefs</div>
                         </div>
                     </div>
                     
-                    <div class="bg-gradient-to-r from-royal-800/50 to-royal-700/50 p-8 rounded-2xl border border-gold-400/30 backdrop-blur-md">
-                        <h4 class="font-royal font-bold text-gold-300 mb-4 flex items-center text-xl">
+                    <div class="bg-gradient-to-r from-royal-800/50 to-royal-700/50 p-6 md:p-8 rounded-2xl border border-gold-400/30 backdrop-blur-md">
+                        <h4 class="font-royal font-bold text-gold-300 mb-3 md:mb-4 flex items-center text-lg md:text-xl">
                             <i class="fas fa-quote-left text-gold-400 mr-3"></i>
                             Our Royal Promise
                         </h4>
-                        <p class="text-elegant text-gold-200 leading-relaxed">
+                        <p class="text-elegant text-gold-200 leading-relaxed text-sm md:text-base">
                             "We pledge to honor the culinary traditions of India while creating 
                             new memories for every guest. Every meal at Spice Trail is not just 
                             dining, but a celebration of India's rich heritage and hospitality."
                         </p>
-                        <div class="text-script text-gold-400 text-right mt-4 text-lg">
+                        <div class="text-script text-gold-400 text-right mt-3 md:mt-4 text-base md:text-lg">
                             - Chef Maharaj Singh, Executive Chef
                         </div>
                     </div>
@@ -1430,23 +1559,23 @@
     </section>
 
     <!-- Royal Reservation Section -->
-    <section id="reservations" class="py-24 relative">
+    <section id="reservations" class="py-16 md:py-24 relative">
         <div class="container mx-auto px-4">
             <div class="max-w-5xl mx-auto">
-                <div class="text-center mb-20 reveal-traditional">
-                    <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-8 py-3 mb-8 border border-gold-400/30">
+                <div class="text-center mb-12 md:mb-20 reveal-traditional">
+                    <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-6 py-2 mb-6 border border-gold-400/30">
                         <i class="fas fa-crown text-gold-400 mr-3"></i>
-                        <span class="text-script text-gold-300 text-lg">Reserve Your Royal Experience</span>
+                        <span class="text-script text-gold-300 text-base md:text-lg">Reserve Your Royal Experience</span>
                     </div>
-                    <h2 class="text-5xl md:text-6xl title-royal mb-8">Book Your Majestic Table</h2>
-                    <p class="text-xl text-elegant">
+                    <h2 class="text-3xl md:text-6xl title-royal mb-6 md:mb-8">Book Your Majestic Table</h2>
+                    <p class="text-lg md:text-xl text-elegant">
                         Secure your place in our royal dining hall for an unforgettable culinary journey
                     </p>
                 </div>
 
-                <div class="bg-gradient-to-br from-royal-800/40 to-royal-700/40 backdrop-blur-md rounded-3xl p-10 border-2 border-gold-400/30 reveal-traditional">
-                    <form id="royal-booking-form" class="space-y-8">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-royal-800/40 to-royal-700/40 backdrop-blur-md rounded-3xl p-6 md:p-10 border-2 border-gold-400/30 reveal-traditional">
+                    <form id="royal-booking-form" class="space-y-6 md:space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                             <div>
                                 <label class="form-label-elegant">
                                     <i class="fas fa-user-crown text-gold-400 mr-3"></i>
@@ -1492,7 +1621,7 @@
                             />
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                             <div>
                                 <label class="form-label-elegant">
                                     <i class="fas fa-calendar-alt text-gold-400 mr-3"></i>
@@ -1565,26 +1694,26 @@
                                 <i class="fas fa-throne text-gold-400 mr-3"></i>
                                 Royal Seating Preference
                             </label>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <label class="flex items-center p-6 border-2 border-gold-400/20 rounded-2xl cursor-pointer hover:border-gold-400/40 transition-colors duration-300 bg-royal-800/20">
-                                    <input type="radio" name="seating-preference" value="Royal Hall" class="mr-4 text-gold-500" checked>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                                <label class="flex items-center p-4 md:p-6 border-2 border-gold-400/20 rounded-2xl cursor-pointer hover:border-gold-400/40 transition-colors duration-300 bg-royal-800/20">
+                                    <input type="radio" name="seating-preference" value="Royal Hall" class="mr-3 md:mr-4 text-gold-500" checked>
                                     <div>
-                                        <div class="font-royal font-medium text-gold-300 text-lg">👑 Royal Hall</div>
-                                        <div class="text-elegant text-gold-400 text-sm">Majestic indoor dining</div>
+                                        <div class="font-royal font-medium text-gold-300 text-base md:text-lg">👑 Royal Hall</div>
+                                        <div class="text-elegant text-gold-400 text-xs md:text-sm">Majestic indoor dining</div>
                                     </div>
                                 </label>
-                                <label class="flex items-center p-6 border-2 border-gold-400/20 rounded-2xl cursor-pointer hover:border-gold-400/40 transition-colors duration-300 bg-royal-800/20">
-                                    <input type="radio" name="seating-preference" value="Garden Terrace" class="mr-4 text-gold-500">
+                                <label class="flex items-center p-4 md:p-6 border-2 border-gold-400/20 rounded-2xl cursor-pointer hover:border-gold-400/40 transition-colors duration-300 bg-royal-800/20">
+                                    <input type="radio" name="seating-preference" value="Garden Terrace" class="mr-3 md:mr-4 text-gold-500">
                                     <div>
-                                        <div class="font-royal font-medium text-gold-300 text-lg">🌿 Garden Terrace</div>
-                                        <div class="text-elegant text-gold-400 text-sm">Outdoor royal garden</div>
+                                        <div class="font-royal font-medium text-gold-300 text-base md:text-lg">🌿 Garden Terrace</div>
+                                        <div class="text-elegant text-gold-400 text-xs md:text-sm">Outdoor royal garden</div>
                                     </div>
                                 </label>
-                                <label class="flex items-center p-6 border-2 border-gold-400/20 rounded-2xl cursor-pointer hover:border-gold-400/40 transition-colors duration-300 bg-royal-800/20">
-                                    <input type="radio" name="seating-preference" value="Private Chamber" class="mr-4 text-gold-500">
+                                <label class="flex items-center p-4 md:p-6 border-2 border-gold-400/20 rounded-2xl cursor-pointer hover:border-gold-400/40 transition-colors duration-300 bg-royal-800/20">
+                                    <input type="radio" name="seating-preference" value="Private Chamber" class="mr-3 md:mr-4 text-gold-500">
                                     <div>
-                                        <div class="font-royal font-medium text-gold-300 text-lg">🏰 Private Chamber</div>
-                                        <div class="text-elegant text-gold-400 text-sm">Exclusive royal suite</div>
+                                        <div class="font-royal font-medium text-gold-300 text-base md:text-lg">🏰 Private Chamber</div>
+                                        <div class="text-elegant text-gold-400 text-xs md:text-sm">Exclusive royal suite</div>
                                     </div>
                                 </label>
                             </div>
@@ -1598,7 +1727,7 @@
                             <textarea
                                 name="requests"
                                 id="royal-requests"
-                                rows="5"
+                                rows="4"
                                 class="form-elegant resize-none"
                                 placeholder="Please share any special requests, dietary preferences, celebration details, or royal requirements for your visit..."
                             ></textarea>
@@ -1607,12 +1736,12 @@
                         <div class="text-center">
                             <button
                                 type="submit"
-                                class="btn-royal text-xl px-16 py-6"
+                                class="btn-royal text-lg md:text-xl px-12 md:px-16 py-4 md:py-6 w-full md:w-auto"
                             >
-                                <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                                <i class="fab fa-whatsapp mr-3 text-xl md:text-2xl"></i>
                                 Confirm Royal Reservation
                             </button>
-                            <p class="text-elegant text-gold-400 mt-6">
+                            <p class="text-elegant text-gold-400 mt-4 md:mt-6 text-sm md:text-base">
                                 <i class="fas fa-shield-alt text-gold-500 mr-2"></i>
                                 Complimentary reservation • Royal treatment guaranteed • Flexible modifications
                             </p>
@@ -1624,15 +1753,15 @@
     </section>
 
     <!-- Traditional Gallery Section -->
-    <section id="gallery" class="py-24 relative">
+    <section id="gallery" class="py-16 md:py-24 relative">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-20 reveal-traditional">
-                <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-8 py-3 mb-8 border border-gold-400/30">
+            <div class="text-center mb-12 md:mb-20 reveal-traditional">
+                <div class="inline-flex items-center bg-royal-800/30 backdrop-blur-md rounded-full px-6 py-2 mb-6 border border-gold-400/30">
                     <i class="fas fa-camera text-gold-400 mr-3"></i>
-                    <span class="text-script text-gold-300 text-lg">Royal Visual Feast</span>
+                    <span class="text-script text-gold-300 text-base md:text-lg">Royal Visual Feast</span>
                 </div>
-                <h2 class="text-5xl md:text-6xl title-royal mb-8">Culinary Artistry Gallery</h2>
-                <p class="text-xl text-elegant">
+                <h2 class="text-3xl md:text-6xl title-royal mb-6 md:mb-8">Culinary Artistry Gallery</h2>
+                <p class="text-lg md:text-xl text-elegant">
                     Witness the beauty of our traditional dishes and royal dining experience
                 </p>
             </div>
@@ -1642,8 +1771,8 @@
                     <img src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Butter Chicken Royal" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
                     <div class="gallery-overlay-traditional">
                         <div class="text-center">
-                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Butter Chicken Royale</h3>
-                            <p class="text-elegant text-gold-400">Our signature royal delicacy</p>
+                            <h3 class="text-xl md:text-2xl title-royal text-gold-300 mb-2">Butter Chicken Royale</h3>
+                            <p class="text-elegant text-gold-400 text-sm md:text-base">Our signature royal delicacy</p>
                         </div>
                     </div>
                 </div>
@@ -1652,8 +1781,8 @@
                     <img src="https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Hyderabadi Biryani" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
                     <div class="gallery-overlay-traditional">
                         <div class="text-center">
-                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Biryani Hyderabadi</h3>
-                            <p class="text-elegant text-gold-400">Aromatic royal rice delight</p>
+                            <h3 class="text-xl md:text-2xl title-royal text-gold-300 mb-2">Biryani Hyderabadi</h3>
+                            <p class="text-elegant text-gold-400 text-sm md:text-base">Aromatic royal rice delight</p>
                         </div>
                     </div>
                 </div>
@@ -1662,8 +1791,8 @@
                     <img src="https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Tandoori Platter" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
                     <div class="gallery-overlay-traditional">
                         <div class="text-center">
-                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Tandoori Royal Platter</h3>
-                            <p class="text-elegant text-gold-400">Grilled to perfection</p>
+                            <h3 class="text-xl md:text-2xl title-royal text-gold-300 mb-2">Tandoori Royal Platter</h3>
+                            <p class="text-elegant text-gold-400 text-sm md:text-base">Grilled to perfection</p>
                         </div>
                     </div>
                 </div>
@@ -1672,8 +1801,8 @@
                     <img src="https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Fresh Naan" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
                     <div class="gallery-overlay-traditional">
                         <div class="text-center">
-                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Tandoor Fresh Naan</h3>
-                            <p class="text-elegant text-gold-400">Straight from royal tandoor</p>
+                            <h3 class="text-xl md:text-2xl title-royal text-gold-300 mb-2">Tandoor Fresh Naan</h3>
+                            <p class="text-elegant text-gold-400 text-sm md:text-base">Straight from royal tandoor</p>
                         </div>
                     </div>
                 </div>
@@ -1682,8 +1811,8 @@
                     <img src="https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Indian Sweets" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
                     <div class="gallery-overlay-traditional">
                         <div class="text-center">
-                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Royal Sweet Collection</h3>
-                            <p class="text-elegant text-gold-400">Traditional mithai assortment</p>
+                            <h3 class="text-xl md:text-2xl title-royal text-gold-300 mb-2">Royal Sweet Collection</h3>
+                            <p class="text-elegant text-gold-400 text-sm md:text-base">Traditional mithai assortment</p>
                         </div>
                     </div>
                 </div>
@@ -1692,8 +1821,8 @@
                     <img src="https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Masala Chai" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
                     <div class="gallery-overlay-traditional">
                         <div class="text-center">
-                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Royal Masala Chai</h3>
-                            <p class="text-elegant text-gold-400">Authentic spiced tea</p>
+                            <h3 class="text-xl md:text-2xl title-royal text-gold-300 mb-2">Royal Masala Chai</h3>
+                            <p class="text-elegant text-gold-400 text-sm md:text-base">Authentic spiced tea</p>
                         </div>
                     </div>
                 </div>
@@ -1702,8 +1831,8 @@
                     <img src="https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Dining Ambiance" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
                     <div class="gallery-overlay-traditional">
                         <div class="text-center">
-                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Royal Dining Hall</h3>
-                            <p class="text-elegant text-gold-400">Majestic ambiance</p>
+                            <h3 class="text-xl md:text-2xl title-royal text-gold-300 mb-2">Royal Dining Hall</h3>
+                            <p class="text-elegant text-gold-400 text-sm md:text-base">Majestic ambiance</p>
                         </div>
                     </div>
                 </div>
@@ -1712,8 +1841,8 @@
                     <img src="https://images.pexels.com/photos/1907228/pexels-photo-1907228.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Curry Selection" onerror="this.src='https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop'">
                     <div class="gallery-overlay-traditional">
                         <div class="text-center">
-                            <h3 class="text-2xl title-royal text-gold-300 mb-2">Royal Curry Selection</h3>
-                            <p class="text-elegant text-gold-400">Rich traditional flavors</p>
+                            <h3 class="text-xl md:text-2xl title-royal text-gold-300 mb-2">Royal Curry Selection</h3>
+                            <p class="text-elegant text-gold-400 text-sm md:text-base">Rich traditional flavors</p>
                         </div>
                     </div>
                 </div>
@@ -1722,90 +1851,90 @@
     </section>
 
     <!-- Royal Footer -->
-    <footer class="bg-gradient-to-b from-royal-900 to-royal-950 text-gold-200 py-20 border-t-4 border-gold-400">
+    <footer class="bg-gradient-to-b from-royal-900 to-royal-950 text-gold-200 py-12 md:py-20 border-t-4 border-gold-400">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
                 <div class="md:col-span-2">
-                    <div class="restaurant-logo mb-8">
+                    <div class="restaurant-logo mb-6 md:mb-8">
                         <div class="logo-mandala"></div>
                         <div>
                             <div class="restaurant-name">Spice Trail</div>
                             <div class="restaurant-tagline">Fine Dining</div>
                         </div>
                     </div>
-                    <p class="text-elegant mb-8 max-w-md leading-relaxed text-lg">
+                    <p class="text-elegant mb-6 md:mb-8 max-w-md leading-relaxed text-base md:text-lg">
                         Immerse yourself in the royal heritage of Indian cuisine. 
                         Where every meal is a celebration of tradition, every flavor tells a story, 
                         and every visit becomes a cherished memory.
                     </p>
                     
                     <!-- Royal Social Media Links -->
-                    <div class="flex space-x-4">
-                        <a href="#" class="bg-gold-500/20 p-4 rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-110 border border-gold-400/30">
-                            <i class="fab fa-facebook text-gold-400 hover:text-royal-900 text-xl"></i>
+                    <div class="flex space-x-3 md:space-x-4">
+                        <a href="#" class="bg-gold-500/20 p-3 md:p-4 rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-110 border border-gold-400/30">
+                            <i class="fab fa-facebook text-gold-400 hover:text-royal-900 text-lg md:text-xl"></i>
                         </a>
-                        <a href="#" class="bg-gold-500/20 p-4 rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-110 border border-gold-400/30">
-                            <i class="fab fa-instagram text-gold-400 hover:text-royal-900 text-xl"></i>
+                        <a href="#" class="bg-gold-500/20 p-3 md:p-4 rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-110 border border-gold-400/30">
+                            <i class="fab fa-instagram text-gold-400 hover:text-royal-900 text-lg md:text-xl"></i>
                         </a>
-                        <a href="#" class="bg-gold-500/20 p-4 rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-110 border border-gold-400/30">
-                            <i class="fab fa-twitter text-gold-400 hover:text-royal-900 text-xl"></i>
+                        <a href="#" class="bg-gold-500/20 p-3 md:p-4 rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-110 border border-gold-400/30">
+                            <i class="fab fa-twitter text-gold-400 hover:text-royal-900 text-lg md:text-xl"></i>
                         </a>
-                        <a href="#" class="bg-gold-500/20 p-4 rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-110 border border-gold-400/30">
-                            <i class="fab fa-youtube text-gold-400 hover:text-royal-900 text-xl"></i>
+                        <a href="#" class="bg-gold-500/20 p-3 md:p-4 rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-110 border border-gold-400/30">
+                            <i class="fab fa-youtube text-gold-400 hover:text-royal-900 text-lg md:text-xl"></i>
                         </a>
-                        <a href="#" class="bg-green-600/20 p-4 rounded-full hover:bg-green-600 transition-all duration-300 transform hover:scale-110 border border-green-400/30">
-                            <i class="fab fa-whatsapp text-green-400 hover:text-white text-xl"></i>
+                        <a href="#" class="bg-green-600/20 p-3 md:p-4 rounded-full hover:bg-green-600 transition-all duration-300 transform hover:scale-110 border border-green-400/30">
+                            <i class="fab fa-whatsapp text-green-400 hover:text-white text-lg md:text-xl"></i>
                         </a>
                     </div>
                 </div>
 
                 <div>
-                    <h4 class="text-xl font-royal font-bold mb-8 text-gold-300">Royal Navigation</h4>
-                    <ul class="space-y-4">
-                        <li><a href="#home" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-lg"><i class="fas fa-chevron-right mr-3 text-xs"></i>🏛️ Royal Home</a></li>
-                        <li><a href="#menu" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-lg"><i class="fas fa-chevron-right mr-3 text-xs"></i>📜 Heritage Menu</a></li>
-                        <li><a href="#about" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-lg"><i class="fas fa-chevron-right mr-3 text-xs"></i>👑 Our Legacy</a></li>
-                        <li><a href="#reservations" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-lg"><i class="fas fa-chevron-right mr-3 text-xs"></i>🍽️ Royal Booking</a></li>
-                        <li><a href="#gallery" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-lg"><i class="fas fa-chevron-right mr-3 text-xs"></i>📸 Gallery</a></li>
+                    <h4 class="text-lg md:text-xl font-royal font-bold mb-6 md:mb-8 text-gold-300">Royal Navigation</h4>
+                    <ul class="space-y-3 md:space-y-4">
+                        <li><a href="#home" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-base md:text-lg"><i class="fas fa-chevron-right mr-2 md:mr-3 text-xs"></i>🏛️ Royal Home</a></li>
+                        <li><a href="#menu" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-base md:text-lg"><i class="fas fa-chevron-right mr-2 md:mr-3 text-xs"></i>📜 Heritage Menu</a></li>
+                        <li><a href="#about" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-base md:text-lg"><i class="fas fa-chevron-right mr-2 md:mr-3 text-xs"></i>👑 Our Legacy</a></li>
+                        <li><a href="#reservations" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-base md:text-lg"><i class="fas fa-chevron-right mr-2 md:mr-3 text-xs"></i>🍽️ Royal Booking</a></li>
+                        <li><a href="#gallery" class="text-elegant hover:text-gold-400 transition-colors duration-300 flex items-center text-base md:text-lg"><i class="fas fa-chevron-right mr-2 md:mr-3 text-xs"></i>📸 Gallery</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-xl font-royal font-bold mb-8 text-gold-300">Royal Contact</h4>
-                    <div class="space-y-4">
+                    <h4 class="text-lg md:text-xl font-royal font-bold mb-6 md:mb-8 text-gold-300">Royal Contact</h4>
+                    <div class="space-y-3 md:space-y-4">
                         <div class="flex items-start text-elegant">
-                            <i class="fas fa-map-marker-alt text-gold-400 mr-4 mt-1"></i>
-                            <span class="text-lg">Palace Road, Heritage District<br />New Delhi, India 110001</span>
+                            <i class="fas fa-map-marker-alt text-gold-400 mr-3 md:mr-4 mt-1"></i>
+                            <span class="text-base md:text-lg">Palace Road, Heritage District<br />New Delhi, India 110001</span>
                         </div>
                         <div class="flex items-center text-elegant">
-                            <i class="fas fa-phone text-gold-400 mr-4"></i>
-                            <span class="text-lg">+91 98000 00000</span>
+                            <i class="fas fa-phone text-gold-400 mr-3 md:mr-4"></i>
+                            <span class="text-base md:text-lg">+91 99999 99999</span>
                         </div>
                         <div class="flex items-center text-elegant">
-                            <i class="fas fa-envelope text-gold-400 mr-4"></i>
-                            <span class="text-lg">royal@spicetrail.in</span>
+                            <i class="fas fa-envelope text-gold-400 mr-3 md:mr-4"></i>
+                            <span class="text-base md:text-lg">royal@spicetrail.in</span>
                         </div>
                         <div class="flex items-center text-elegant">
-                            <i class="fas fa-clock text-gold-400 mr-4"></i>
-                            <span class="text-lg">Daily: 12 PM - 11 PM</span>
+                            <i class="fas fa-clock text-gold-400 mr-3 md:mr-4"></i>
+                            <span class="text-base md:text-lg">Daily: 12 PM - 11 PM</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Royal Footer Bottom -->
-            <div class="border-t-2 border-gold-400/30 pt-12">
+            <div class="border-t-2 border-gold-400/30 pt-8 md:pt-12">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="text-elegant mb-6 md:mb-0">
-                        <p class="text-lg">&copy; 2024 Spice Trail Fine Dining. All Royal Rights Reserved.</p>
-                        <p class="text-sm text-gold-400">Authentic Indian Heritage • Licensed Restaurant • GST: 07XXXXX0000X1Z5</p>
+                    <div class="text-elegant mb-4 md:mb-0">
+                        <p class="text-base md:text-lg">&copy; 2024 Spice Trail Fine Dining. All Royal Rights Reserved.</p>
+                        <p class="text-xs md:text-sm text-gold-400">Authentic Indian Heritage • Licensed Restaurant • GST: 07XXXXX0000X1Z5</p>
                     </div>
-                    <div class="flex items-center space-x-6">
-                        <a href="#" class="text-gold-400 hover:text-gold-300 text-sm transition-colors duration-300">Privacy Policy</a>
+                    <div class="flex items-center space-x-4 md:space-x-6">
+                        <a href="#" class="text-gold-400 hover:text-gold-300 text-xs md:text-sm transition-colors duration-300">Privacy Policy</a>
                         <span class="text-gold-600">|</span>
-                        <a href="#" class="text-gold-400 hover:text-gold-300 text-sm transition-colors duration-300">Terms of Service</a>
+                        <a href="#" class="text-gold-400 hover:text-gold-300 text-xs md:text-sm transition-colors duration-300">Terms of Service</a>
                         <span class="text-gold-600">|</span>
-                        <p class="text-gold-400 font-script font-bold text-lg">
+                        <p class="text-gold-400 font-script font-bold text-base md:text-lg">
                             Digital presence by amazingads95
                         </p>
                     </div>
@@ -1842,46 +1971,87 @@
             setupTraditionalObserver();
         }
 
-        // Royal Mobile Menu Toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const icon = this.querySelector('i');
-            
-            if (mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
-            } else {
-                mobileMenu.classList.add('active');
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            }
-        });
 
-        // Smooth Royal Scrolling Navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const header = document.querySelector('header');
-                    const headerHeight = header ? header.offsetHeight : 90;
-                    const targetPosition = target.offsetTop - headerHeight - 30;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-                
-                // Close royal mobile menu
-                const mobileMenu = document.getElementById('mobile-menu');
-                const menuBtn = document.querySelector('#mobile-menu-btn i');
-                mobileMenu.classList.remove('active');
-                menuBtn.classList.add('fa-bars');
-                menuBtn.classList.remove('fa-times');
+        // Smooth Royal Scrolling Navigation 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        // Don't prevent default on mobile menu button
+        if (this.id === 'mobile-menu-btn' || this.closest('#mobile-menu')) {
+            return;
+        }
+        
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 90;
+            const targetPosition = target.offsetTop - headerHeight - 30;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
+        }
+        
+        // Close royal mobile menu when navigation links are clicked
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuBtn = document.querySelector('#mobile-menu-btn i');
+        if (mobileMenu && menuBtn) {
+            mobileMenu.classList.remove('active');
+            menuBtn.classList.add('fa-bars');
+            menuBtn.classList.remove('fa-times');
+        }
+    });
+});
+
+// Separate mobile menu toggle function
+document.getElementById('mobile-menu-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const mobileMenu = document.getElementById('mobile-menu');
+    const icon = this.querySelector('i');
+    
+    if (mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+    } else {
+        mobileMenu.classList.add('active');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    }
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    
+    if (mobileMenu && mobileMenu.classList.contains('active') && 
+        !mobileMenu.contains(e.target) && 
+        !menuBtn.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+        const icon = menuBtn.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+    }
+});
+
+// Fix scroll to menu function
+function scrollToMenu() {
+    const target = document.querySelector('#menu');
+    if (target) {
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 90;
+        const targetPosition = target.offsetTop - headerHeight - 20;
+        
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
         });
+    }
+}
 
         // Royal Header Scroll Effect
         window.addEventListener('scroll', function() {
@@ -1977,7 +2147,7 @@ ${data.requests || 'No special requests'}
 *🌟 Spice Trail Fine Dining - Where Every Meal is Royal*
 *Digital presence by amazingads95*`;
             
-            const phoneNumber = '+919800000000'; // Royal dummy number
+            const phoneNumber = '+919999999999'; // Royal dummy number - CHANGED
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(whatsappURL, '_blank');
             
@@ -2017,7 +2187,7 @@ I'm eager to embark on this culinary journey through India's rich heritage!
 
 🙏 Dhanyawad (Thank you)`;
             
-            const phoneNumber = '+919800000000';
+            const phoneNumber = '+919999999999'; // Royal dummy number - CHANGED
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(whatsappURL, '_blank');
         }
@@ -2025,20 +2195,20 @@ I'm eager to embark on this culinary journey through India's rich heritage!
         // Royal Notification System
         function showRoyalNotification(message, type = 'info') {
             const notification = document.createElement('div');
-            notification.className = `fixed top-28 right-4 z-50 p-6 rounded-2xl shadow-2xl max-w-md transform translate-x-full transition-transform duration-500 border-2`;
+            notification.className = `fixed top-28 right-4 z-50 p-4 md:p-6 rounded-2xl shadow-2xl max-w-md transform translate-x-full transition-transform duration-500 border-2`;
             
             switch(type) {
                 case 'success':
                     notification.classList.add('bg-gradient-to-r', 'from-green-800', 'to-green-700', 'text-green-100', 'border-green-500');
-                    notification.innerHTML = `<i class="fas fa-crown mr-3 text-xl"></i><span class="font-elegant text-lg">${message}</span>`;
+                    notification.innerHTML = `<i class="fas fa-crown mr-3 text-lg md:text-xl"></i><span class="font-elegant text-base md:text-lg">${message}</span>`;
                     break;
                 case 'error':
                     notification.classList.add('bg-gradient-to-r', 'from-red-800', 'to-red-700', 'text-red-100', 'border-red-500');
-                    notification.innerHTML = `<i class="fas fa-exclamation-triangle mr-3 text-xl"></i><span class="font-elegant text-lg">${message}</span>`;
+                    notification.innerHTML = `<i class="fas fa-exclamation-triangle mr-3 text-lg md:text-xl"></i><span class="font-elegant text-base md:text-lg">${message}</span>`;
                     break;
                 default:
                     notification.classList.add('bg-gradient-to-r', 'from-royal-800', 'to-royal-700', 'text-gold-100', 'border-gold-500');
-                    notification.innerHTML = `<i class="fas fa-info-circle mr-3 text-xl"></i><span class="font-elegant text-lg">${message}</span>`;
+                    notification.innerHTML = `<i class="fas fa-info-circle mr-3 text-lg md:text-xl"></i><span class="font-elegant text-base md:text-lg">${message}</span>`;
             }
             
             // Mobile optimization for royal notifications
