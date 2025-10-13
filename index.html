@@ -1952,93 +1952,7 @@
     <!-- Royal JavaScript -->
     <script>
         // Authentic Indian restaurant experience crafted by amazingads95
-        
-        // Royal Loading Screen
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                const loadingScreen = document.getElementById('loading-screen');
-                loadingScreen.style.opacity = '0';
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                    document.body.style.overflow = 'visible';
-                    initializeRoyalAnimations();
-                }, 1000);
-            }, 2500);
-        });
-
-        // Initialize Royal Animations
-        function initializeRoyalAnimations() {
-            setupTraditionalObserver();
-        }
-
-
-        // Smooth Royal Scrolling Navigation 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        // Don't prevent default on mobile menu button
-        if (this.id === 'mobile-menu-btn' || this.closest('#mobile-menu')) {
-            return;
-        }
-        
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const header = document.querySelector('header');
-            const headerHeight = header ? header.offsetHeight : 90;
-            const targetPosition = target.offsetTop - headerHeight - 30;
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-        
-        // Close royal mobile menu when navigation links are clicked
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuBtn = document.querySelector('#mobile-menu-btn i');
-        if (mobileMenu && menuBtn) {
-            mobileMenu.classList.remove('active');
-            menuBtn.classList.add('fa-bars');
-            menuBtn.classList.remove('fa-times');
-        }
-    });
-});
-
-// Separate mobile menu toggle function
-document.getElementById('mobile-menu-btn').addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    const mobileMenu = document.getElementById('mobile-menu');
-    const icon = this.querySelector('i');
-    
-    if (mobileMenu.classList.contains('active')) {
-        mobileMenu.classList.remove('active');
-        icon.classList.add('fa-bars');
-        icon.classList.remove('fa-times');
-    } else {
-        mobileMenu.classList.add('active');
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    }
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(e) {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    
-    if (mobileMenu && mobileMenu.classList.contains('active') && 
-        !mobileMenu.contains(e.target) && 
-        !menuBtn.contains(e.target)) {
-        mobileMenu.classList.remove('active');
-        const icon = menuBtn.querySelector('i');
-        icon.classList.add('fa-bars');
-        icon.classList.remove('fa-times');
-    }
-});
-
-// Fix scroll to menu function
+       // Fix scroll to menu function
 function scrollToMenu() {
     const target = document.querySelector('#menu');
     if (target) {
@@ -2053,77 +1967,145 @@ function scrollToMenu() {
     }
 }
 
-        // Royal Header Scroll Effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.pageYOffset > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+// Mobile Menu Toggle Function
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const icon = document.querySelector('#mobile-menu-btn i');
+    
+    if (mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+    } else {
+        mobileMenu.classList.add('active');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    }
+}
 
-        // Traditional Menu Category Switching
-        function showCategoryTraditional(category) {
-            // Hide all menu categories
-            document.querySelectorAll('.menu-category').forEach(menu => {
-                menu.classList.add('hidden');
+// Initialize Royal Animations
+function initializeRoyalAnimations() {
+    setupTraditionalObserver();
+}
+
+// Royal Mobile Menu Toggle - Fixed
+document.getElementById('mobile-menu-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleMobileMenu();
+});
+
+// Smooth Royal Scrolling Navigation - Only for actual navigation links
+document.querySelectorAll('.nav-traditional a, .mobile-menu-traditional a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 90;
+            const targetPosition = target.offsetTop - headerHeight - 30;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
-            
-            // Remove active class from all tabs
-            document.querySelectorAll('.tab-traditional').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Show selected category
-            document.getElementById(category + '-menu').classList.remove('hidden');
-            
-            // Add active class to selected tab
-            document.getElementById(category + '-tab').classList.add('active');
         }
-
-        // Set minimum date for royal booking
-        const royalDate = document.getElementById('royal-date');
-        if (royalDate) {
-            const today = new Date();
-            const tomorrow = new Date(today);
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            royalDate.min = tomorrow.toISOString().split('T')[0];
+        
+        // Close royal mobile menu after clicking a link
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuBtn = document.querySelector('#mobile-menu-btn i');
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            menuBtn.classList.add('fa-bars');
+            menuBtn.classList.remove('fa-times');
         }
+    });
+});
 
-        // Royal Table Booking Form Submission
-        document.getElementById('royal-booking-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            const seatingPreference = document.querySelector('input[name="seating-preference"]:checked')?.value || 'Royal Hall';
-            
-            // Royal form validation
-            if (!data.name || !data.phone || !data.date || !data.time || !data.guests) {
-                showRoyalNotification('Please complete all required royal fields for your reservation.', 'error');
-                return;
-            }
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    
+    if (mobileMenu && mobileMenu.classList.contains('active') && 
+        !mobileMenu.contains(e.target) && 
+        e.target !== menuBtn && 
+        !menuBtn.contains(e.target)) {
+        toggleMobileMenu();
+    }
+});
 
-            // Royal phone validation
-            const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-            if (!phoneRegex.test(data.phone.replace(/\s/g, ''))) {
-                showRoyalNotification('Please provide a valid contact number for your royal reservation.', 'error');
-                return;
-            }
+// Royal Header Scroll Effect
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.pageYOffset > 100) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
 
-            // Royal date validation
-            const selectedDate = new Date(data.date);
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-            
-            if (selectedDate <= today) {
-                showRoyalNotification('Please select a future date for your royal dining experience.', 'error');
-                return;
-            }
-            
-            // Create royal WhatsApp message
-            const message = `🏰 *ROYAL TABLE RESERVATION*
+// Traditional Menu Category Switching
+function showCategoryTraditional(category) {
+    // Hide all menu categories
+    document.querySelectorAll('.menu-category').forEach(menu => {
+        menu.classList.add('hidden');
+    });
+    
+    // Remove active class from all tabs
+    document.querySelectorAll('.tab-traditional').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Show selected category
+    document.getElementById(category + '-menu').classList.remove('hidden');
+    
+    // Add active class to selected tab
+    document.getElementById(category + '-tab').classList.add('active');
+}
+
+// Set minimum date for royal booking
+const royalDate = document.getElementById('royal-date');
+if (royalDate) {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    royalDate.min = tomorrow.toISOString().split('T')[0];
+}
+
+// Royal Table Booking Form Submission
+document.getElementById('royal-booking-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    const seatingPreference = document.querySelector('input[name="seating-preference"]:checked')?.value || 'Royal Hall';
+    
+    // Royal form validation
+    if (!data.name || !data.phone || !data.date || !data.time || !data.guests) {
+        showRoyalNotification('Please complete all required royal fields for your reservation.', 'error');
+        return;
+    }
+
+    // Royal phone validation
+    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+    if (!phoneRegex.test(data.phone.replace(/\s/g, ''))) {
+        showRoyalNotification('Please provide a valid contact number for your royal reservation.', 'error');
+        return;
+    }
+
+    // Royal date validation
+    const selectedDate = new Date(data.date);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    if (selectedDate <= today) {
+        showRoyalNotification('Please select a future date for your royal dining experience.', 'error');
+        return;
+    }
+    
+    // Create royal WhatsApp message
+    const message = `🏰 *ROYAL TABLE RESERVATION*
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 👑 *Distinguished Guest Details:*
@@ -2146,34 +2128,34 @@ ${data.requests || 'No special requests'}
 
 *🌟 Spice Trail Fine Dining - Where Every Meal is Royal*
 *Digital presence by amazingads95*`;
-            
-            const phoneNumber = '+919999999999'; // Royal dummy number - CHANGED
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappURL, '_blank');
-            
-            // Royal success feedback
-            const button = this.querySelector('button[type="submit"]');
-            const originalText = button.innerHTML;
-            button.innerHTML = '<i class="fas fa-crown mr-3"></i>Royal Reservation Confirmed!';
-            button.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-            
-            showRoyalNotification('Your royal table reservation has been sent! Our palace staff will confirm your booking within 30 minutes. 👑', 'success');
-            
-            setTimeout(() => {
-                button.innerHTML = originalText;
-                button.style.background = '';
-                this.reset();
-                if (royalDate) {
-                    const tomorrow = new Date();
-                    tomorrow.setDate(tomorrow.getDate() + 1);
-                    royalDate.min = tomorrow.toISOString().split('T')[0];
-                }
-            }, 5000);
-        });
+    
+    const phoneNumber = '+919999999999'; // Royal dummy number - CHANGED
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+    
+    // Royal success feedback
+    const button = this.querySelector('button[type="submit"]');
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-crown mr-3"></i>Royal Reservation Confirmed!';
+    button.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+    
+    showRoyalNotification('Your royal table reservation has been sent! Our palace staff will confirm your booking within 30 minutes. 👑', 'success');
+    
+    setTimeout(() => {
+        button.innerHTML = originalText;
+        button.style.background = '';
+        this.reset();
+        if (royalDate) {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            royalDate.min = tomorrow.toISOString().split('T')[0];
+        }
+    }, 5000);
+});
 
-        // Traditional WhatsApp Chat Function
-        function openWhatsAppTraditional() {
-            const message = `🏰 *Namaste from Spice Trail Fine Dining!*
+// Traditional WhatsApp Chat Function
+function openWhatsAppTraditional() {
+    const message = `🏰 *Namaste from Spice Trail Fine Dining!*
 
 🌟 I'm interested in experiencing your royal Indian cuisine. Could you please share information about:
 
@@ -2186,107 +2168,120 @@ ${data.requests || 'No special requests'}
 I'm eager to embark on this culinary journey through India's rich heritage!
 
 🙏 Dhanyawad (Thank you)`;
-            
-            const phoneNumber = '+919999999999'; // Royal dummy number - CHANGED
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappURL, '_blank');
-        }
+    
+    const phoneNumber = '+919999999999'; // Royal dummy number - CHANGED
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+}
 
-        // Royal Notification System
-        function showRoyalNotification(message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.className = `fixed top-28 right-4 z-50 p-4 md:p-6 rounded-2xl shadow-2xl max-w-md transform translate-x-full transition-transform duration-500 border-2`;
-            
-            switch(type) {
-                case 'success':
-                    notification.classList.add('bg-gradient-to-r', 'from-green-800', 'to-green-700', 'text-green-100', 'border-green-500');
-                    notification.innerHTML = `<i class="fas fa-crown mr-3 text-lg md:text-xl"></i><span class="font-elegant text-base md:text-lg">${message}</span>`;
-                    break;
-                case 'error':
-                    notification.classList.add('bg-gradient-to-r', 'from-red-800', 'to-red-700', 'text-red-100', 'border-red-500');
-                    notification.innerHTML = `<i class="fas fa-exclamation-triangle mr-3 text-lg md:text-xl"></i><span class="font-elegant text-base md:text-lg">${message}</span>`;
-                    break;
-                default:
-                    notification.classList.add('bg-gradient-to-r', 'from-royal-800', 'to-royal-700', 'text-gold-100', 'border-gold-500');
-                    notification.innerHTML = `<i class="fas fa-info-circle mr-3 text-lg md:text-xl"></i><span class="font-elegant text-base md:text-lg">${message}</span>`;
+// Royal Notification System
+function showRoyalNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `fixed top-28 right-4 z-50 p-4 md:p-6 rounded-2xl shadow-2xl max-w-md transform translate-x-full transition-transform duration-500 border-2`;
+    
+    switch(type) {
+        case 'success':
+            notification.classList.add('bg-gradient-to-r', 'from-green-800', 'to-green-700', 'text-green-100', 'border-green-500');
+            notification.innerHTML = `<i class="fas fa-crown mr-3 text-lg md:text-xl"></i><span class="font-elegant text-base md:text-lg">${message}</span>`;
+            break;
+        case 'error':
+            notification.classList.add('bg-gradient-to-r', 'from-red-800', 'to-red-700', 'text-red-100', 'border-red-500');
+            notification.innerHTML = `<i class="fas fa-exclamation-triangle mr-3 text-lg md:text-xl"></i><span class="font-elegant text-base md:text-lg">${message}</span>`;
+            break;
+        default:
+            notification.classList.add('bg-gradient-to-r', 'from-royal-800', 'to-royal-700', 'text-gold-100', 'border-gold-500');
+            notification.innerHTML = `<i class="fas fa-info-circle mr-3 text-lg md:text-xl"></i><span class="font-elegant text-base md:text-lg">${message}</span>`;
+    }
+    
+    // Mobile optimization for royal notifications
+    if (window.innerWidth <= 768) {
+        notification.classList.remove('right-4');
+        notification.classList.add('right-2', 'left-2', 'max-w-none');
+    }
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    setTimeout(() => {
+        notification.style.transform = window.innerWidth <= 768 ? 'translateY(-100%)' : 'translateX(100%)';
+        setTimeout(() => {
+            if (document.body.contains(notification)) {
+                document.body.removeChild(notification);
             }
-            
-            // Mobile optimization for royal notifications
-            if (window.innerWidth <= 768) {
-                notification.classList.remove('right-4');
-                notification.classList.add('right-2', 'left-2', 'max-w-none');
-            }
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.style.transform = 'translateX(0)';
-            }, 100);
-            
-            setTimeout(() => {
-                notification.style.transform = window.innerWidth <= 768 ? 'translateY(-100%)' : 'translateX(100%)';
+        }, 500);
+    }, 6000);
+}
+
+// Traditional Intersection Observer for Reveal Animations
+function setupTraditionalObserver() {
+    const observerOptions = {
+        threshold: window.innerWidth <= 768 ? 0.05 : 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = entry.target.getAttribute('data-delay') || 0;
                 setTimeout(() => {
-                    if (document.body.contains(notification)) {
-                        document.body.removeChild(notification);
-                    }
-                }, 500);
-            }, 6000);
-        }
+                    entry.target.classList.add('active');
+                }, window.innerWidth <= 768 ? Math.min(delay, 300) : delay);
+            }
+        });
+    }, observerOptions);
 
-        // Traditional Intersection Observer for Reveal Animations
-        function setupTraditionalObserver() {
-            const observerOptions = {
-                threshold: window.innerWidth <= 768 ? 0.05 : 0.15,
-                rootMargin: '0px 0px -50px 0px'
-            };
+    document.querySelectorAll('.reveal-traditional').forEach(element => {
+        observer.observe(element);
+    });
+}
 
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const delay = entry.target.getAttribute('data-delay') || 0;
-                        setTimeout(() => {
-                            entry.target.classList.add('active');
-                        }, window.innerWidth <= 768 ? Math.min(delay, 300) : delay);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.reveal-traditional').forEach(element => {
-                observer.observe(element);
-            });
-        }
-
-        // Royal form enhancements
-        document.addEventListener('DOMContentLoaded', function() {
-            const inputs = document.querySelectorAll('.form-elegant');
-            inputs.forEach(input => {
-                input.addEventListener('focus', function() {
-                    this.style.borderColor = '#d97706';
-                    this.style.boxShadow = '0 0 0 4px rgba(217, 119, 6, 0.1), inset 0 2px 4px rgba(251, 191, 36, 0.1)';
-                });
-                
-                input.addEventListener('blur', function() {
-                    if (!this.value) {
-                        this.style.borderColor = 'rgba(217, 119, 6, 0.2)';
-                        this.style.boxShadow = 'none';
-                    }
-                });
-
-                // Prevent zoom on iOS for royal forms
-                if (window.innerWidth <= 768) {
-                    input.addEventListener('focus', function() {
-                        this.style.fontSize = '16px';
-                    });
-                }
-            });
+// Royal form enhancements
+document.addEventListener('DOMContentLoaded', function() {
+    const inputs = document.querySelectorAll('.form-elegant');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.style.borderColor = '#d97706';
+            this.style.boxShadow = '0 0 0 4px rgba(217, 119, 6, 0.1), inset 0 2px 4px rgba(251, 191, 36, 0.1)';
+        });
+        
+        input.addEventListener('blur', function() {
+            if (!this.value) {
+                this.style.borderColor = 'rgba(217, 119, 6, 0.2)';
+                this.style.boxShadow = 'none';
+            }
         });
 
-        // Handle royal orientation change
-        window.addEventListener('orientationchange', function() {
-            setTimeout(() => {
-                window.dispatchEvent(new Event('resize'));
-            }, 600);
-        });
+        // Prevent zoom on iOS for royal forms
+        if (window.innerWidth <= 768) {
+            input.addEventListener('focus', function() {
+                this.style.fontSize = '16px';
+            });
+        }
+    });
+});
+
+// Handle royal orientation change
+window.addEventListener('orientationchange', function() {
+    setTimeout(() => {
+        window.dispatchEvent(new Event('resize'));
+    }, 600);
+});
+
+// Royal Loading Screen
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+            document.body.style.overflow = 'visible';
+            initializeRoyalAnimations();
+        }, 1000);
+    }, 2500);
+});
 
         // Authentic Indian restaurant experience crafted by amazingads95
     </script>
